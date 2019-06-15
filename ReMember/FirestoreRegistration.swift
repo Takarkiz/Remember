@@ -14,25 +14,25 @@ import FirebaseStorage
 class FirestoreResistration {
     
     let db = Firestore.firestore()
-    private var personId: String
     
     init() {
-        personId = ""
+        
     }
     
     // Firestoreに故人の基本情報を登録
-    func resisterNewPerson(name: String, date: Date, image: UIImage, completion: () -> Void) {
-        var ref: DocumentReference? = nil
+    func resisterNewPerson(name: String, date: Date, image: UIImage?, completion: @escaping () -> Void) {
+        let personId: String = UUID().uuidString
         profPhotoUpload(id: personId, image: image) {(imageUrl) in
-            ref = self.db.collection("Person").addDocument(data: [
+            self.db.collection("Person").document(personId).setData([
                 "name": name,
                 "date": date,
                 "image": imageUrl
             ]) { err in
                 if let err = err {
-                    print("Error adding document: \(err)")
+                    print("Error writing document: \(err)")
                 } else {
-                    print("Document added with ID: \(ref!.documentID)")
+                    print("Document successfully written!")
+                    completion()
                 }
             }
         }
@@ -60,12 +60,12 @@ class FirestoreResistration {
     
     // Private
     /// 写真のfirestorageへのアップロード
-    private func profPhotoUpload(id: String, image: UIImage, completion: @escaping (String) -> Void) {
+    private func profPhotoUpload(id: String, image: UIImage?, completion: @escaping (String) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://remember-4ec53.appspot.com")
-        
-        if let data: Data = UIImage.pngData(image)() {
-            let imageUrl = "image/" + id + "/profImage/" + ".jpg"
+        guard let img = image else { return }
+        if let data: Data = UIImage.pngData(img)() {
+            let imageUrl = "image/" + id + "/profImage" + ".jpg"
             let reference = storageRef.child(imageUrl)
             reference.putData(data, metadata: nil, completion: { metaData, error in
                 // ユーザー画像のurlを渡す
@@ -95,7 +95,7 @@ class FirestoreResistration {
     
     private func dicToPerson(dic: [String: Any], completion: @escaping (Result<Person, Error>) -> Void){
         let userName: String = dic["name"] as! String
-        let date: Date = dic["date"] as! Date
+        let date: Date = (dic["date"] as! Timestamp).dateValue()
         let imageUrl: String = dic["image"] as! String
         
         getProfPhoto(imageUrl: imageUrl) { (result) in
