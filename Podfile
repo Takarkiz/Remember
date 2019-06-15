@@ -6,6 +6,7 @@ target 'ReMember' do
   use_frameworks!
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 
   # Pods for ReMember
 
