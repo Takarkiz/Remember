@@ -14,6 +14,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var save = UserDefaults.standard
     let fireRegistration = FirestoreResistration()
+    
+    var name: String = ""
+    var date: String = ""
+    var image: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +25,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
     
-        self.tableView.register(UINib(nibName: "AddTableViewCell", bundle: nil),
-                                forHeaderFooterViewReuseIdentifier: "kojin")
-        self.tableView.register(UINib(nibName: "PersonTableViewCell", bundle: nil),
-                                forHeaderFooterViewReuseIdentifier: "person")
-//
-//
+        self.tableView.register(UINib(nibName: "AddTableViewCell", bundle: nil), forCellReuseIdentifier: "kojin")
+        self.tableView.register(UINib(nibName: "PersonTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonTableViewCell")
+
+        fireRegistration.getPerson(id: "1E6ABD01-B50A-491A-B8C0-85689D484A27"){ (result) in
+            switch result{
+            case .success(let value):
+                self.name = value.name
+                var format = DateFormatter()
+                format.dateFormat = "yyyy年MM月dd日"
+                self.date = format.string(from: value.date)
+                self.image = value.image
+                self.tableView.reloadData()
+                break
+                
+            case .failure( _):
+                break
+            }
+            
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,24 +60,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // TableViewのセルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "person", for: indexPath) as! PersonTableViewCell
-//        var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "kojin", for: indexPath) as! AddTableViewCell
-        if indexPath.item == 0{
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "kojin", for: indexPath) as! AddTableViewCell
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
+            cell.imagea.image = image
+            cell.name.text = name
+            cell.date.text = date
+            return cell
             
-        }else{
-            //let cell = tableView.dequeueReusableCell(withIdentifier: "person", for: indexPath) as! PersonTableViewCell
-
-            //　他のやつ
         }
-        
-        return cell
+
     }
     
     // TableViewが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.item == 0 {
+        if indexPath.row == 0 {
             //まずは、同じstororyboard内であることをここで定義します
             let storyboard: UIStoryboard = self.storyboard!
             //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
@@ -75,6 +94,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.present(second, animated: true, completion: nil)
         }
 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30 // セルの上部のスペース
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30 // セルの下部のスペース
+    }
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clear // 透明にすることでスペースとする
+    }
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clear// 透明にすることでスペースとする
     }
 
 }

@@ -22,16 +22,6 @@
                                 <rect key="frame" x="16" y="44" width="343" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="person" rowHeight="139" id="FCs-bx-Q3c" customClass="PersonTableViewCell" customModule="ReMember" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="139"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCs-bx-Q3c" id="JKu-BY-1H5" customClass="PersonTableViewCell" customModule="ReMember" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="138.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127" y="132"/>
+            <point key="canvasLocation" x="125.59999999999999" y="131.52709359605913"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="QIl-a2-nnf">

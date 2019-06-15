@@ -9,10 +9,20 @@
 import UIKit
 
 class PersonTableViewCell: UITableViewCell {
+    
+    @IBOutlet var imagea:UIImageView!
+    @IBOutlet var name:UILabel!
+    @IBOutlet var date:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setCell(image:UIImage, name:String, date:String) {
+        //self.imagea.image = image
+        self.name.text = name
+        self.date.text = date
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
