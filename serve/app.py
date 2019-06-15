@@ -24,8 +24,8 @@ firebase = pyrebase.initialize_app(config)
 
 # video.release()
 
-@app.route('/')
-def index():
+@app.route('/api/v1/img/<img_id>')
+def index(img_id):
     storage = firebase.storage()
     # metadata = {
     #     contentType: 'image/png',
@@ -35,7 +35,7 @@ def index():
     # photo_path = requests.get('https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500').content
     #.childの中は保存するStorage内のディレクトリ
     # storage.child('google.jpg').put(photo_path, user['idToken'])
-    storage.child("/img/image001.png").put('./img/image000.png')
+    storage.child('/image/' + img_id +'/image001.png').put('./img/image001.png')
     return 'hello'
 
 
