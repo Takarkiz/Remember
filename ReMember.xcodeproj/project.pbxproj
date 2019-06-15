@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205C878642F521C8D017706A /* Pods_ReMemberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */; };
+		5D635FAF83C60FDA8BAF5707 /* Pods_ReMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */; };
 		AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4822B4C9F10035384E /* AppDelegate.swift */; };
 		AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4A22B4C9F10035384E /* ViewController.swift */; };
 		AE1EDE4E22B4C9F10035384E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1EDE4C22B4C9F10035384E /* Main.storyboard */; };
@@ -14,6 +16,10 @@
 		AE1EDE5322B4C9F30035384E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */; };
 		AE1EDE5E22B4C9F30035384E /* ReMemberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE5D22B4C9F30035384E /* ReMemberTests.swift */; };
 		AE1EDE6922B4C9F30035384E /* ReMemberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE6822B4C9F30035384E /* ReMemberUITests.swift */; };
+		AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */; };
+		AE1EDE7922B4D34E0035384E /* FirestoreRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7822B4D34E0035384E /* FirestoreRegistration.swift */; };
+		AE1EDE7B22B4D5200035384E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7A22B4D5200035384E /* Person.swift */; };
+		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMemberUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.release.xcconfig"; sourceTree = "<group>"; };
+		6E13B9725E2FB3048ACF3C64 /* Pods-ReMemberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberTests/Pods-ReMemberTests.release.xcconfig"; sourceTree = "<group>"; };
+		76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EDE4522B4C9F10035384E /* ReMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EDE4822B4C9F10035384E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE1EDE4A22B4C9F10035384E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,14 @@
 		AE1EDE6422B4C9F30035384E /* ReMemberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReMemberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EDE6822B4C9F30035384E /* ReMemberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReMemberUITests.swift; sourceTree = "<group>"; };
 		AE1EDE6A22B4C9F30035384E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AE1EDE7822B4D34E0035384E /* FirestoreRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRegistration.swift; sourceTree = "<group>"; };
+		AE1EDE7A22B4D5200035384E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
+		DEF08E9ED956B3B65C8238D0 /* Pods-ReMemberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberTests/Pods-ReMemberTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMemberTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D635FAF83C60FDA8BAF5707 /* Pods_ReMember.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205C878642F521C8D017706A /* Pods_ReMemberUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67FDE0162B8C3E5225823C74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */,
+				FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */,
+				29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A50D31B3EC572DBF185C2D4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */,
+				463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */,
+				DEF08E9ED956B3B65C8238D0 /* Pods-ReMemberTests.debug.xcconfig */,
+				6E13B9725E2FB3048ACF3C64 /* Pods-ReMemberTests.release.xcconfig */,
+				D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */,
+				D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AE1EDE3C22B4C9F10035384E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +125,8 @@
 				AE1EDE5C22B4C9F30035384E /* ReMemberTests */,
 				AE1EDE6722B4C9F30035384E /* ReMemberUITests */,
 				AE1EDE4622B4C9F10035384E /* Products */,
+				A50D31B3EC572DBF185C2D4B /* Pods */,
+				67FDE0162B8C3E5225823C74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +149,9 @@
 				AE1EDE4F22B4C9F30035384E /* Assets.xcassets */,
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
+				AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */,
+				AE1EDE7822B4D34E0035384E /* FirestoreRegistration.swift */,
+				AE1EDE7A22B4D5200035384E /* Person.swift */,
 			);
 			path = ReMember;
 			sourceTree = "<group>";
@@ -132,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE1EDE6D22B4C9F30035384E /* Build configuration list for PBXNativeTarget "ReMember" */;
 			buildPhases = (
+				743093E77B31C1C30CDF0A4E /* [CP] Check Pods Manifest.lock */,
 				AE1EDE4122B4C9F10035384E /* Sources */,
 				AE1EDE4222B4C9F10035384E /* Frameworks */,
 				AE1EDE4322B4C9F10035384E /* Resources */,
+				2C5912EC5D924BC5C5FF9A99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE1EDE7022B4C9F30035384E /* Build configuration list for PBXNativeTarget "ReMemberTests" */;
 			buildPhases = (
+				ED6C5B22C013B02D541269AB /* [CP] Check Pods Manifest.lock */,
 				AE1EDE5522B4C9F30035384E /* Sources */,
 				AE1EDE5622B4C9F30035384E /* Frameworks */,
 				AE1EDE5722B4C9F30035384E /* Resources */,
@@ -167,6 +219,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE1EDE7322B4C9F30035384E /* Build configuration list for PBXNativeTarget "ReMemberUITests" */;
 			buildPhases = (
+				8AB0507F2448EF6BF1C8CB76 /* [CP] Check Pods Manifest.lock */,
 				AE1EDE6022B4C9F30035384E /* Sources */,
 				AE1EDE6122B4C9F30035384E /* Frameworks */,
 				AE1EDE6222B4C9F30035384E /* Resources */,
@@ -230,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1EDE5322B4C9F30035384E /* LaunchScreen.storyboard in Resources */,
+				AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */,
 				AE1EDE5022B4C9F30035384E /* Assets.xcassets in Resources */,
 				AE1EDE4E22B4C9F10035384E /* Main.storyboard in Resources */,
 			);
@@ -251,6 +305,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C5912EC5D924BC5C5FF9A99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReMember/Pods-ReMember-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReMember/Pods-ReMember-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		743093E77B31C1C30CDF0A4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReMember-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB0507F2448EF6BF1C8CB76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReMemberUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED6C5B22C013B02D541269AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReMemberTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AE1EDE4122B4C9F10035384E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +399,8 @@
 			files = (
 				AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */,
 				AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */,
+				AE1EDE7B22B4D5200035384E /* Person.swift in Sources */,
+				AE1EDE7922B4D34E0035384E /* FirestoreRegistration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,15 +573,13 @@
 		};
 		AE1EDE6E22B4C9F30035384E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMember/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -448,15 +589,13 @@
 		};
 		AE1EDE6F22B4C9F30035384E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMember/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -466,17 +605,14 @@
 		};
 		AE1EDE7122B4C9F30035384E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF08E9ED956B3B65C8238D0 /* Pods-ReMemberTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -487,17 +623,14 @@
 		};
 		AE1EDE7222B4C9F30035384E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E13B9725E2FB3048ACF3C64 /* Pods-ReMemberTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -508,16 +641,13 @@
 		};
 		AE1EDE7422B4C9F30035384E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -528,16 +658,13 @@
 		};
 		AE1EDE7522B4C9F30035384E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
