@@ -13,7 +13,7 @@ class CustomButton: UIButton {
 
     @IBInspectable var cornerRadius : CGFloat = 5.0
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         self.layer.cornerRadius = cornerRadius
     }

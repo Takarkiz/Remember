@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="139" id="FCs-bx-Q3c" customClass="PersonTableViewCell" customModule="ReMember" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="person" rowHeight="139" id="FCs-bx-Q3c" customClass="PersonTableViewCell" customModule="ReMember" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCs-bx-Q3c" id="JKu-BY-1H5">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCs-bx-Q3c" id="JKu-BY-1H5" customClass="PersonTableViewCell" customModule="ReMember" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="138.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -37,6 +37,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="GCL-XA-hXz" id="h4j-co-jqZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="989.60000000000002" y="131.52709359605913"/>
         </scene>
-        <!--View Controller-->
+        <!--Person Collection View Controller-->
         <scene sceneID="vlO-y9-WHS">
             <objects>
-                <viewController storyboardIdentifier="person" id="Hfd-Il-cqb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="person" id="Hfd-Il-cqb" customClass="PersonCollectionViewController" customModule="ReMember" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBG-nd-dG8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,7 +192,7 @@
                                     <navigationItem title="おばば" id="N70-FI-A5c">
                                         <barButtonItem key="leftBarButtonItem" title="&lt;" id="xxh-cp-7tf">
                                             <connections>
-                                                <action selector="toViewController" destination="Hfd-Il-cqb" id="LQv-1C-lba"/>
+                                                <action selector="back" destination="Hfd-Il-cqb" id="MO5-lw-eZF"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -229,11 +232,17 @@
                                 <rect key="frame" x="94" y="118" width="186" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="動画を生成する"/>
+                                <connections>
+                                    <action selector="createMovie" destination="Hfd-Il-cqb" eventType="touchUpInside" id="oq3-tT-fFs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RIA-jj-AMk"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="d2K-xm-Mat" id="pM6-lo-cgC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9d-52-xCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

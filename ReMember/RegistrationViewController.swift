@@ -31,16 +31,16 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
             // 「.camera」にすればカメラを起動できる
             pickerView.sourceType = .photoLibrary
             // デリゲート
-            pickerView.delegate = self
+            pickerView.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
             // ビューに表示
             self.present(pickerView, animated: true)
         }
     }
     
     // 写真を選んだ後に呼ばれる処理
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 選択した写真を取得する
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[.originalImage] as! UIImage
         // ビューに表示する
         imageButton.setImage(image, for: .normal)
         // 写真を選ぶビューを引っ込める
