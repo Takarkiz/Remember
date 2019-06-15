@@ -29,6 +29,9 @@
 		AE1EDE7B22B4D5200035384E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7A22B4D5200035384E /* Person.swift */; };
 		AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7E22B541580035384E /* FirestorePost.swift */; };
 		AE1EDE8122B5576E0035384E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE8022B5576E0035384E /* Memory.swift */; };
+		AE9CD08F22B5AD4D00F6F058 /* App-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9CD08C22B5AD4D00F6F058 /* App-icon.png */; };
+		AE9CD09022B5AD4D00F6F058 /* App-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9CD08D22B5AD4D00F6F058 /* App-icon@2x.png */; };
+		AE9CD09122B5AD4D00F6F058 /* App-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9CD08E22B5AD4D00F6F058 /* App-icon@3x.png */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,9 @@
 		AE1EDE7A22B4D5200035384E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AE1EDE7E22B541580035384E /* FirestorePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorePost.swift; sourceTree = "<group>"; };
 		AE1EDE8022B5576E0035384E /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		AE9CD08C22B5AD4D00F6F058 /* App-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon.png"; sourceTree = "<group>"; };
+		AE9CD08D22B5AD4D00F6F058 /* App-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@2x.png"; sourceTree = "<group>"; };
+		AE9CD08E22B5AD4D00F6F058 /* App-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@3x.png"; sourceTree = "<group>"; };
 		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 		AE1EDE4722B4C9F10035384E /* ReMember */ = {
 			isa = PBXGroup;
 			children = (
+				AE9CD08B22B5AD4D00F6F058 /* icon */,
 				098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */,
 				098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */,
 				AE1EDE4822B4C9F10035384E /* AppDelegate.swift */,
@@ -205,6 +212,16 @@
 				AE1EDE6A22B4C9F30035384E /* Info.plist */,
 			);
 			path = ReMemberUITests;
+			sourceTree = "<group>";
+		};
+		AE9CD08B22B5AD4D00F6F058 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				AE9CD08C22B5AD4D00F6F058 /* App-icon.png */,
+				AE9CD08D22B5AD4D00F6F058 /* App-icon@2x.png */,
+				AE9CD08E22B5AD4D00F6F058 /* App-icon@3x.png */,
+			);
+			path = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,8 +335,11 @@
 				AE1EDE5322B4C9F30035384E /* LaunchScreen.storyboard in Resources */,
 				26B6518822B5891E0087DC04 /* AddTableViewCell.xib in Resources */,
 				AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */,
+				AE9CD09022B5AD4D00F6F058 /* App-icon@2x.png in Resources */,
 				AE1EDE5022B4C9F30035384E /* Assets.xcassets in Resources */,
+				AE9CD08F22B5AD4D00F6F058 /* App-icon.png in Resources */,
 				098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */,
+				AE9CD09122B5AD4D00F6F058 /* App-icon@3x.png in Resources */,
 				AE1EDE4E22B4C9F10035384E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,10 +656,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 279JS98594;
+				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember.a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -655,10 +678,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 279JS98594;
+				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember.a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -676,7 +702,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -694,7 +724,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -711,7 +745,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -728,7 +766,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialButtons_Theming
 
 class AddViewController: UIViewController {
     
@@ -14,6 +16,8 @@ class AddViewController: UIViewController {
     @IBOutlet var userNmaeLabel: UILabel!
     @IBOutlet var userDeathDateLabel: UILabel!
     @IBOutlet var contentTextView: UITextView!
+    @IBOutlet var photoUplocadButton: MDCButton!
+    @IBOutlet var comformButton: MDCButton!
     
     let userId = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
     let registration = FirestoreResistration()
@@ -25,6 +29,14 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
 
         setUserProf()
+        setupButton()
+        contentTextView.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.contentTextView.isFirstResponder {
+            self.contentTextView.resignFirstResponder()
+        }
     }
     
     @IBAction func willPhotoPick() {
@@ -48,6 +60,22 @@ class AddViewController: UIViewController {
             let text = contentTextView.text
             
         }
+    }
+    
+    private func globalScheme(color: UIColor) -> MDCContainerScheme {
+        let containerScheme = MDCContainerScheme()
+        containerScheme.shapeScheme = MDCShapeScheme()
+        containerScheme.colorScheme.primaryColor = color
+        // Customize containerScheme here...
+        return containerScheme
+    }
+    
+    private func setupButton() {
+        photoUplocadButton.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        comformButton.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        
+        photoUplocadButton.applyContainedTheme(withScheme: globalScheme(color: UIColor(hex: "6A6A6A")))
+        comformButton.applyContainedTheme(withScheme: globalScheme(color: UIColor(hex: "B2B2B2")))
     }
     
     private func setUserProf() {
@@ -84,11 +112,11 @@ extension AddViewController: UIImagePickerControllerDelegate {
 
 extension AddViewController: UITextViewDelegate {
     
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView.text == "" {
-            // TODO: - ボタンの色を変えたい
+            comformButton.applyContainedTheme(withScheme: globalScheme(color: UIColor(hex: "B2B2B2")))
         } else {
-            
+            comformButton.applyContainedTheme(withScheme: globalScheme(color: UIColor(hex: "F9796E")))
         }
         return true
     }
