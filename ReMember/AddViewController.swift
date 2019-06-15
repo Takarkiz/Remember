@@ -1,14 +1,14 @@
 //
-//  RegistrationViewController.swift
+//  AddViewController.swift
 //  ReMember
 //
-//  Created by k15046kk on 2019/06/15.
-//  Copyright © 2019 澤田昂明. All rights reserved.
+//  Created by 早川理々花 on 2019/06/15.
+//  Copyright © 2019年 澤田昂明. All rights reserved.
 //
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class AddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

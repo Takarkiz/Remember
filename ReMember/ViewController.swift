@@ -10,10 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
-    
-    
     //@IBOutlet weak var tableView: UITableView!
+    
+    var save = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-
+    
+    // TableViewが選択された時
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var nextVC = ""
+        if indexPath.item == 0 {
+            nextVC = "registration"
+        }else{
+            nextVC = "person"
+        }
+        //まずは、同じstororyboard内であることをここで定義します
+        let storyboard: UIStoryboard = self.storyboard!
+        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
+        let second = storyboard.instantiateViewController(withIdentifier: nextVC)
+        //ここが実際に移動するコードとなります
+        self.present(second, animated: true, completion: nil)
+    }
 
 }
 
