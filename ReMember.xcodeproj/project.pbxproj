@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		205C878642F521C8D017706A /* Pods_ReMemberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */; };
-		5D635FAF83C60FDA8BAF5707 /* Pods_ReMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */; };
 		098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */; };
 		098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */; };
 		098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49C22B4D8A400846BED /* RegistrationViewController.swift */; };
+		205C878642F521C8D017706A /* Pods_ReMemberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */; };
+		5D635FAF83C60FDA8BAF5707 /* Pods_ReMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */; };
 		AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4822B4C9F10035384E /* AppDelegate.swift */; };
 		AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4A22B4C9F10035384E /* ViewController.swift */; };
 		AE1EDE4E22B4C9F10035384E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1EDE4C22B4C9F10035384E /* Main.storyboard */; };
@@ -44,13 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		098FC49C22B4D8A400846BED /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMemberUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.release.xcconfig"; sourceTree = "<group>"; };
 		6E13B9725E2FB3048ACF3C64 /* Pods-ReMemberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberTests/Pods-ReMemberTests.release.xcconfig"; sourceTree = "<group>"; };
 		76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
-		098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
-		098FC49C22B4D8A400846BED /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AE1EDE4522B4C9F10035384E /* ReMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EDE4822B4C9F10035384E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE1EDE4A22B4C9F10035384E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -591,11 +590,11 @@
 			baseConfigurationReference = DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,11 +612,11 @@
 			baseConfigurationReference = 463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,7 +638,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -657,7 +660,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -674,7 +681,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -691,7 +702,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

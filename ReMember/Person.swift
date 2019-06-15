@@ -8,9 +8,15 @@
 
 import UIKit
 
-struct Person {
+class Person {
     
     let name: String
     let date: Date
     let image: UIImage
+    
+    init(name: String, date: Date, image: UIImage) {
+        self.name = name
+        self.date = date
+        self.image = image
+    }
 }
