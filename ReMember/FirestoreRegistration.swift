@@ -75,7 +75,7 @@ class FirestoreResistration {
     }
     
     // 画像の取得
-    private func getProfPhoto(imageUrl: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
+    func getPhoto(imageUrl: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
         let storage = Storage.storage()
         
         // Create a reference from a Google Cloud Storage URI
@@ -98,7 +98,7 @@ class FirestoreResistration {
         let date: Date = (dic["date"] as! Timestamp).dateValue()
         let imageUrl: String = dic["image"] as! String
         
-        getProfPhoto(imageUrl: imageUrl) { (result) in
+        getPhoto(imageUrl: imageUrl) { (result) in
             switch result{
             case .success(let value):
                 let person = Person(name: userName, date: date, image: value)
