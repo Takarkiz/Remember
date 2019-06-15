@@ -10,6 +10,8 @@ import UIKit
 
 class PersonCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var id:String!
+    
     @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
