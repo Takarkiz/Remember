@@ -29,6 +29,7 @@
 		AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7E22B541580035384E /* FirestorePost.swift */; };
 		AE1EDE8122B5576E0035384E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE8022B5576E0035384E /* Memory.swift */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
+		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF08E9ED956B3B65C8238D0 /* Pods-ReMemberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberTests/Pods-ReMemberTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMemberTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC2031022B59A0D00874F4A /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				AE1EDE4A22B4C9F10035384E /* ViewController.swift */,
 				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
 				AE1EDE4C22B4C9F10035384E /* Main.storyboard */,
+				FFC2031022B59A0D00874F4A /* HexColor.swift */,
 				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
 				09BAEAE822B55A950029C22B /* CustomButton.swift */,
 				09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */,
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1EDE8122B5576E0035384E /* Memory.swift in Sources */,
+				FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */,
 				098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */,
 				AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */,
 				09BAEAE622B54E4A0029C22B /* AddTableViewCell.swift in Sources */,
