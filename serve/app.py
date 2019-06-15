@@ -3,6 +3,7 @@ import glob
 from flask import Flask
 import requests
 import pyrebase
+import subprocess as sp
 
 app = Flask(__name__)
 
@@ -15,29 +16,37 @@ config = {
 
 firebase = pyrebase.initialize_app(config)
 
-# files = glob.glob('./img/*.png')
-# for f in files:
-#     img = cv2.imread(f)
-#     img = cv2.resize(img, (640,480))
-#     # print(img)
-#     video.write(img)
-
-# video.release()
-
 @app.route('/api/v1/img/<img_id>')
 def index(img_id):
     storage = firebase.storage()
-    # metadata = {
-    #     contentType: 'image/png',
-    # }
-    # files = glob.glob('./img/*.png')
-    # img = cv2.imread(files[0])
-    # photo_path = requests.get('https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500').content
-    #.childの中は保存するStorage内のディレクトリ
-    # storage.child('google.jpg').put(photo_path, user['idToken'])
-    storage.child('/image/' + img_id +'/image001.png').put('./img/image001.png')
-    return 'hello'
+    # storageに画像登録(server test用)
+    # storage.child('/image/' + img_id +'/image002.png').put('./img/image002.png')
+    # storage.child('/image/' + img_id +'/image003.png').put('./img/image003.png')
+    # storage.child('/image/' + img_id +'/image000.png').put('./img/image000.png')
 
+    # download(時間があればいい感じのコードにしたい)
+    storage.child('/image/' + img_id + '/image001.png').download('./save_img/image001.png')
+    storage.child('/image/' + img_id + '/image002.png').download('./save_img/image002.png')
+    storage.child('/image/' + img_id + '/image003.png').download('./save_img/image003.png')
+    storage.child('/image/' + img_id + '/image000.png').download('./save_img/image000.png')
+
+    # 画像の名前と大きさによって変更(いい感じにしたい)
+    cmd='ffmpeg \
+    -loop 1 -t 5 -i ./img/image000.png \
+    -loop 1 -t 5 -i ./img/image001.png \
+    -loop 1 -t 5 -i ./img/image002.png \
+    -loop 1 -t 5 -i ./img/image003.png \
+    -filter_complex \
+    "[0:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fade=t=out:st=4:d=1[v0]; \
+    [1:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v1]; \
+    [2:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v2]; \
+    [3:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v3]; \
+    [v0][v1][v2][v3]concat=n=4:v=1:a=0,format=yuv420p[v]" -map "[v]" ./save_mp4/out.mp4'
+    sp.call(cmd,shell=True)
+
+    storage.child('/mp4/' + img_id +'/out.mp4').put('./save_mp4/out.mp4')
+
+    return 'hello'
 
 
 if __name__ == '__main__':
