@@ -7,6 +7,7 @@ target 'ReMember' do
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
+pod 'MaterialComponents'
 
   # Pods for ReMember
 
