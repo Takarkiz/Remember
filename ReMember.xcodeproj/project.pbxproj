@@ -10,6 +10,10 @@
 		098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */; };
 		098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */; };
 		098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49C22B4D8A400846BED /* RegistrationViewController.swift */; };
+		09BAEAE622B54E4A0029C22B /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */; };
+		09BAEAE722B54E4A0029C22B /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */; };
+		09BAEAE922B55A950029C22B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAE822B55A950029C22B /* CustomButton.swift */; };
+		09BAEAEB22B55E3F0029C22B /* PersonCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */; };
 		205C878642F521C8D017706A /* Pods_ReMemberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */; };
 		5D635FAF83C60FDA8BAF5707 /* Pods_ReMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */; };
 		AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4822B4C9F10035384E /* AppDelegate.swift */; };
@@ -47,6 +51,10 @@
 		098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 		098FC49C22B4D8A400846BED /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
+		09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
+		09BAEAE822B55A950029C22B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewController.swift; sourceTree = "<group>"; };
 		29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMemberUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.release.xcconfig"; sourceTree = "<group>"; };
 		6E13B9725E2FB3048ACF3C64 /* Pods-ReMemberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberTests/Pods-ReMemberTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +165,10 @@
 				AE1EDE4A22B4C9F10035384E /* ViewController.swift */,
 				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
 				AE1EDE4C22B4C9F10035384E /* Main.storyboard */,
+				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
+				09BAEAE822B55A950029C22B /* CustomButton.swift */,
+				09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */,
+				09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */,
 				AE1EDE4F22B4C9F30035384E /* Assets.xcassets */,
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
@@ -295,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1EDE5322B4C9F30035384E /* LaunchScreen.storyboard in Resources */,
+				09BAEAE722B54E4A0029C22B /* AddTableViewCell.xib in Resources */,
 				AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */,
 				AE1EDE5022B4C9F30035384E /* Assets.xcassets in Resources */,
 				098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */,
@@ -415,7 +428,10 @@
 			files = (
 				098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */,
 				AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */,
+				09BAEAE622B54E4A0029C22B /* AddTableViewCell.swift in Sources */,
 				098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */,
+				09BAEAE922B55A950029C22B /* CustomButton.swift in Sources */,
+				09BAEAEB22B55E3F0029C22B /* PersonCollectionViewController.swift in Sources */,
 				AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */,
 				AE1EDE7B22B4D5200035384E /* Person.swift in Sources */,
 				AE1EDE7922B4D34E0035384E /* FirestoreRegistration.swift in Sources */,
@@ -596,9 +612,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PPRG6W84P;
+				DEVELOPMENT_TEAM = 74R627M8V7;
 				INFOPLIST_FILE = ReMember/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,7 +623,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -618,9 +634,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PPRG6W84P;
+				DEVELOPMENT_TEAM = 74R627M8V7;
 				INFOPLIST_FILE = ReMember/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,7 +645,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

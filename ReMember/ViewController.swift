@@ -10,13 +10,23 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //@IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var save = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     
+        self.tableView.register(UINib(nibName: "", bundle: nil),
+                                forHeaderFooterViewReuseIdentifier: "")
+        self.tableView.register(UINib(nibName: "", bundle: nil),
+                                forHeaderFooterViewReuseIdentifier: "")
+        
+        
     }
     
     // TableViewのセルの数
@@ -26,8 +36,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // TableViewのセルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
+        
+        if indexPath.item == 0{
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "kojin", for: indexPath) as! AddTableViewCell
+        }else{
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "person", for: indexPath) as! PersonTableViewCell
+            
+            //　他のやつ
+        }
         
         
         return cell
@@ -36,18 +53,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // TableViewが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var nextVC = ""
         if indexPath.item == 0 {
-            nextVC = "registration"
+            
         }else{
-            nextVC = "person"
+            //まずは、同じstororyboard内であることをここで定義します
+            let storyboard: UIStoryboard = self.storyboard!
+            //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
+            let second = storyboard.instantiateViewController(withIdentifier: "person")
+            //ここが実際に移動するコードとなります
+            self.present(second, animated: true, completion: nil)
         }
-        //まずは、同じstororyboard内であることをここで定義します
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-        let second = storyboard.instantiateViewController(withIdentifier: nextVC)
-        //ここが実際に移動するコードとなります
-        self.present(second, animated: true, completion: nil)
+
     }
 
 }
