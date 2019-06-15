@@ -25,10 +25,11 @@ def index(img_id):
     # storage.child('/image/' + img_id +'/image000.png').put('./img/image000.png')
 
     # download(時間があればいい感じのコードにしたい)
+    storage.child('/image/' + img_id + '/image000.png').download('./save_img/image000.png')
     storage.child('/image/' + img_id + '/image001.png').download('./save_img/image001.png')
     storage.child('/image/' + img_id + '/image002.png').download('./save_img/image002.png')
     storage.child('/image/' + img_id + '/image003.png').download('./save_img/image003.png')
-    storage.child('/image/' + img_id + '/image000.png').download('./save_img/image000.png')
+    
 
     # 画像の名前と大きさによって変更(いい感じにしたい)
     cmd='ffmpeg \
