@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 // Firestoreでの故人の登録読み込み
 class FirestoreResistration {
