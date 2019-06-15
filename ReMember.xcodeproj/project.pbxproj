@@ -10,6 +10,8 @@
 		098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */; };
 		098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */; };
 		098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49C22B4D8A400846BED /* RegistrationViewController.swift */; };
+		423300D722B4EF9C0028F543 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423300D622B4EF9C0028F543 /* PersonViewController.swift */; };
+		423300D922B4EFCB0028F543 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423300D822B4EFCB0028F543 /* AddViewController.swift */; };
 		AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4822B4C9F10035384E /* AppDelegate.swift */; };
 		AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4A22B4C9F10035384E /* ViewController.swift */; };
 		AE1EDE4E22B4C9F10035384E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1EDE4C22B4C9F10035384E /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 		098FC49C22B4D8A400846BED /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		423300D622B4EF9C0028F543 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		423300D822B4EFCB0028F543 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		AE1EDE4522B4C9F10035384E /* ReMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EDE4822B4C9F10035384E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE1EDE4A22B4C9F10035384E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				AE1EDE4A22B4C9F10035384E /* ViewController.swift */,
 				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
 				AE1EDE4C22B4C9F10035384E /* Main.storyboard */,
+				423300D822B4EFCB0028F543 /* AddViewController.swift */,
+				423300D622B4EF9C0028F543 /* PersonViewController.swift */,
 				AE1EDE4F22B4C9F30035384E /* Assets.xcassets */,
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
@@ -266,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423300D722B4EF9C0028F543 /* PersonViewController.swift in Sources */,
 				098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */,
+				423300D922B4EFCB0028F543 /* AddViewController.swift in Sources */,
 				AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */,
 				098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */,
 				AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */,
