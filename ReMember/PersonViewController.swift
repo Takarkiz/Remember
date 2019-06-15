@@ -8,7 +8,20 @@
 
 import UIKit
 
-class PersonViewController: UIViewController {
+class PersonViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // UICollectionViewのアイテム数
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    // UICollectionViewアイテム内容
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        
+        return cell
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
