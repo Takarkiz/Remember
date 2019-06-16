@@ -14,6 +14,10 @@ class PersonCollectionViewController: UIViewController, UICollectionViewDelegate
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var nameLabel:UILabel!
+    
+    var name: String = ""
+    var date: String = ""
+    var image: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +25,26 @@ class PersonCollectionViewController: UIViewController, UICollectionViewDelegate
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imagecell")
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         
         nameLabel.text = "aiuto"
+        
+        fireRegistration.getPerson(id: id){ (result) in
+            switch result{
+            case .success(let value):
+                self.name = value.name
+                var format = DateFormatter()
+                format.dateFormat = "yyyy年MM月dd日"
+                self.date = format.string(from: value.date)
+                self.image = value.image
+                self.tableView.reloadData()
+                break
+                
+            case .failure( _):
+                break
+            }
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -32,7 +53,9 @@ class PersonCollectionViewController: UIViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imagecell",
-                                                      for: indexPath)
+                                                      for: indexPath) as! ImageCollectionViewCell
+        
+        cell.imagea.image = self.image
  
         return cell
     }

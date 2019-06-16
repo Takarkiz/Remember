@@ -272,11 +272,10 @@
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-nQ-XUO">
                                 <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="共有" id="tZ7-1h-ukY"/>
-                                    <tabBarItem title="追加" id="80d-c4-dmO"/>
-                                    <tabBarItem title="動画を生成" id="DvV-B7-aGA"/>
+                                    <tabBarItem title="共有" image="tab_icon_left" id="tZ7-1h-ukY"/>
+                                    <tabBarItem title="追加" image="tab_icon_center" id="80d-c4-dmO"/>
+                                    <tabBarItem title="動画を生成" image="tab_icon_right" id="DvV-B7-aGA"/>
                                 </items>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-NJ-89I">
@@ -299,4 +298,9 @@
             <point key="canvasLocation" x="1832.8" y="131.52709359605913"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_icon_center" width="68" height="68"/>
+        <image name="tab_icon_left" width="24.333333969116211" height="21"/>
+        <image name="tab_icon_right" width="29.333333969116211" height="21"/>
+    </resources>
 </document>
