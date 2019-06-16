@@ -11,13 +11,14 @@ import UIKit
 class PersonCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var id:String!
+    var name:String!
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var nameLabel:UILabel!
     
     var name: String = ""
     var date: String = ""
-    var image: UIImage!
+    var memory: [Memory]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,25 +28,31 @@ class PersonCollectionViewController: UIViewController, UICollectionViewDelegate
         
         collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         
-        nameLabel.text = "aiuto"
+        nameLabel.text = name
+        
+        UITabBar.appearance().tintColor =
+            UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0)
+        
+         UITabBar.appearance().barTintColor =
+            UIColor(red: 66/255, green: 74/255, blue: 93/255, alpha: 1.0)
         
         let firePost = FirestorePost(roomId: id)
         firePost.readMemory { (memoryArray) in
-            self.image = memoryArray[0].image
+            self.memory = memoryArray
             self.collectionView.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return memory.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imagecell",
                                                       for: indexPath) as! ImageCollectionViewCell
         
-        cell.imagea.image = self.image
- 
+        cell.imagea.image = memory[indexPath.row].image
+        
         return cell
     }
     
