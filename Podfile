@@ -8,6 +8,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
 pod 'MaterialComponents'
+pod 'Alamofire', '~> 5.0.0-beta.5'
 
   # Pods for ReMember
 
