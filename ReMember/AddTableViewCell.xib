@@ -23,15 +23,15 @@
                         <rect key="frame" x="36" y="15" width="302" height="143"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-Vw-Tc2" customClass="MDCButton">
-                                <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="故人を追加する"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLu-HB-PCe" customClass="MDCButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLu-HB-PCe" customClass="MDCButton">
                                 <rect key="frame" x="159" y="0.0" width="143" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="思い出を共有する"/>
+                                <state key="normal" image="share_button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-Vw-Tc2" customClass="MDCButton">
+                                <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="input_button"/>
                             </button>
                         </subviews>
                     </view>
@@ -45,4 +45,8 @@
             <point key="canvasLocation" x="80.799999999999997" y="94.902548725637189"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="input_button" width="143.5" height="142.5"/>
+        <image name="share_button" width="143.5" height="142.5"/>
+    </resources>
 </document>

@@ -21,11 +21,8 @@ class AddTableViewCell: UITableViewCell {
         addPersonButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
         shareMemoryButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
         
-        addPersonButton.applyTextTheme(withScheme: globalScheme(color: UIColor(hex: "6A6A6A")))
-        shareMemoryButton.applyTextTheme(withScheme: globalScheme(color: UIColor(hex: "6A6A6A")))
-        
-        addPersonButton.backgroundColor = UIColor(hex: "FFFFFF")
-        shareMemoryButton.backgroundColor = UIColor(hex: "FFFFFF")
+        addPersonButton.setImage(UIImage(named: "input_button"), for: .normal)
+        shareMemoryButton.setImage(UIImage(named: "share_button"), for: .normal)
     }
     
     private func globalScheme(color: UIColor) -> MDCContainerScheme {
