@@ -29,21 +29,10 @@ class PersonCollectionViewController: UIViewController, UICollectionViewDelegate
         
         nameLabel.text = "aiuto"
         
-        fireRegistration.getPerson(id: id){ (result) in
-            switch result{
-            case .success(let value):
-                self.name = value.name
-                var format = DateFormatter()
-                format.dateFormat = "yyyy年MM月dd日"
-                self.date = format.string(from: value.date)
-                self.image = value.image
-                self.tableView.reloadData()
-                break
-                
-            case .failure( _):
-                break
-            }
-            
+        let firePost = FirestorePost(roomId: id)
+        firePost.readMemory { (memoryArray) in
+            self.image = memoryArray[0].image
+            self.collectionView.reloadData()
         }
     }
     
