@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -231,7 +231,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="おばば" id="N70-FI-A5c">
+                                    <navigationItem id="N70-FI-A5c">
                                         <barButtonItem key="leftBarButtonItem" title="&lt;" id="xxh-cp-7tf">
                                             <connections>
                                                 <action selector="back" destination="Hfd-Il-cqb" id="MO5-lw-eZF"/>
@@ -240,15 +240,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5W-kN-dzI">
-                                <rect key="frame" x="0.0" y="734" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="JIF-Zy-tkr"/>
-                                    <barButtonItem title="Item" id="dwr-FE-StK"/>
-                                    <barButtonItem title="Item" id="fdt-qk-bz0"/>
-                                </items>
-                            </toolbar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d2K-xm-Mat">
                                 <rect key="frame" x="43" y="280" width="299" height="401"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -278,6 +269,22 @@
                                     <action selector="createMovie" destination="Hfd-Il-cqb" eventType="touchUpInside" id="oq3-tT-fFs"/>
                                 </connections>
                             </button>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-nQ-XUO">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <tabBarItem title="共有" image="tab_icon_left" id="tZ7-1h-ukY"/>
+                                    <tabBarItem title="追加" image="tab_icon_center" id="80d-c4-dmO"/>
+                                    <tabBarItem title="動画を生成" image="tab_icon_right" id="DvV-B7-aGA"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-NJ-89I">
+                                <rect key="frame" x="166" y="56" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RIA-jj-AMk"/>
@@ -291,4 +298,9 @@
             <point key="canvasLocation" x="1832.8" y="131.52709359605913"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_icon_center" width="68" height="68"/>
+        <image name="tab_icon_left" width="24.333333969116211" height="21"/>
+        <image name="tab_icon_right" width="29.333333969116211" height="21"/>
+    </resources>
 </document>

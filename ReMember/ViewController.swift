@@ -106,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "person"{
             let personVC = segue.destination as! PersonCollectionViewController
-//            personVC.id = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
+            personVC.id = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
         }
     }
     

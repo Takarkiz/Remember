@@ -10,12 +10,13 @@
 		098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */; };
 		098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */; };
 		098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098FC49C22B4D8A400846BED /* RegistrationViewController.swift */; };
+		09BAEAE622B54E4A0029C22B /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */; };
+		09BAEAE722B54E4A0029C22B /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */; };
 		09BAEAE922B55A950029C22B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAE822B55A950029C22B /* CustomButton.swift */; };
 		09BAEAEB22B55E3F0029C22B /* PersonCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */; };
+		09BAEAF422B5BDD30029C22B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAEAF222B5BDD30029C22B /* ImageCollectionViewCell.swift */; };
+		09BAEAF522B5BDD30029C22B /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BAEAF322B5BDD30029C22B /* ImageCollectionViewCell.xib */; };
 		205C878642F521C8D017706A /* Pods_ReMemberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */; };
-		26B6518522B577E00087DC04 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B6518422B577E00087DC04 /* AddViewController.swift */; };
-		26B6518822B5891E0087DC04 /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B6518622B5891D0087DC04 /* AddTableViewCell.xib */; };
-		26B6518922B5891E0087DC04 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B6518722B5891E0087DC04 /* AddTableViewCell.swift */; };
 		5D635FAF83C60FDA8BAF5707 /* Pods_ReMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BE5B8C495E96D437CDEE8E /* Pods_ReMember.framework */; };
 		AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4822B4C9F10035384E /* AppDelegate.swift */; };
 		AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE4A22B4C9F10035384E /* ViewController.swift */; };
@@ -29,9 +30,6 @@
 		AE1EDE7B22B4D5200035384E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7A22B4D5200035384E /* Person.swift */; };
 		AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7E22B541580035384E /* FirestorePost.swift */; };
 		AE1EDE8122B5576E0035384E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE8022B5576E0035384E /* Memory.swift */; };
-		AE9CD08F22B5AD4D00F6F058 /* App-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9CD08C22B5AD4D00F6F058 /* App-icon.png */; };
-		AE9CD09022B5AD4D00F6F058 /* App-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9CD08D22B5AD4D00F6F058 /* App-icon@2x.png */; };
-		AE9CD09122B5AD4D00F6F058 /* App-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9CD08E22B5AD4D00F6F058 /* App-icon@3x.png */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -57,11 +55,12 @@
 		098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 		098FC49C22B4D8A400846BED /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
+		09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
 		09BAEAE822B55A950029C22B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewController.swift; sourceTree = "<group>"; };
-		26B6518422B577E00087DC04 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		26B6518622B5891D0087DC04 /* AddTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
-		26B6518722B5891E0087DC04 /* AddTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
+		09BAEAF222B5BDD30029C22B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		09BAEAF322B5BDD30029C22B /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		29A8285321051291EC517B43 /* Pods_ReMemberUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReMemberUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		463276BBF30D9AB04F50C709 /* Pods-ReMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.release.xcconfig"; sourceTree = "<group>"; };
 		6E13B9725E2FB3048ACF3C64 /* Pods-ReMemberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberTests/Pods-ReMemberTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,9 +83,6 @@
 		AE1EDE7A22B4D5200035384E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AE1EDE7E22B541580035384E /* FirestorePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorePost.swift; sourceTree = "<group>"; };
 		AE1EDE8022B5576E0035384E /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
-		AE9CD08C22B5AD4D00F6F058 /* App-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon.png"; sourceTree = "<group>"; };
-		AE9CD08D22B5AD4D00F6F058 /* App-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@2x.png"; sourceTree = "<group>"; };
-		AE9CD08E22B5AD4D00F6F058 /* App-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@3x.png"; sourceTree = "<group>"; };
 		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +167,6 @@
 		AE1EDE4722B4C9F10035384E /* ReMember */ = {
 			isa = PBXGroup;
 			children = (
-				AE9CD08B22B5AD4D00F6F058 /* icon */,
 				098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */,
 				098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */,
 				AE1EDE4822B4C9F10035384E /* AppDelegate.swift */,
@@ -180,9 +175,11 @@
 				AE1EDE4C22B4C9F10035384E /* Main.storyboard */,
 				FFC2031022B59A0D00874F4A /* HexColor.swift */,
 				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
+				09BAEAF222B5BDD30029C22B /* ImageCollectionViewCell.swift */,
+				09BAEAF322B5BDD30029C22B /* ImageCollectionViewCell.xib */,
 				09BAEAE822B55A950029C22B /* CustomButton.swift */,
-				26B6518722B5891E0087DC04 /* AddTableViewCell.swift */,
-				26B6518622B5891D0087DC04 /* AddTableViewCell.xib */,
+				09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */,
+				09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */,
 				AE1EDE4F22B4C9F30035384E /* Assets.xcassets */,
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
@@ -191,7 +188,6 @@
 				AE1EDE7E22B541580035384E /* FirestorePost.swift */,
 				AE1EDE7A22B4D5200035384E /* Person.swift */,
 				AE1EDE8022B5576E0035384E /* Memory.swift */,
-				26B6518422B577E00087DC04 /* AddViewController.swift */,
 			);
 			path = ReMember;
 			sourceTree = "<group>";
@@ -212,16 +208,6 @@
 				AE1EDE6A22B4C9F30035384E /* Info.plist */,
 			);
 			path = ReMemberUITests;
-			sourceTree = "<group>";
-		};
-		AE9CD08B22B5AD4D00F6F058 /* icon */ = {
-			isa = PBXGroup;
-			children = (
-				AE9CD08C22B5AD4D00F6F058 /* App-icon.png */,
-				AE9CD08D22B5AD4D00F6F058 /* App-icon@2x.png */,
-				AE9CD08E22B5AD4D00F6F058 /* App-icon@3x.png */,
-			);
-			path = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,13 +319,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1EDE5322B4C9F30035384E /* LaunchScreen.storyboard in Resources */,
-				26B6518822B5891E0087DC04 /* AddTableViewCell.xib in Resources */,
+				09BAEAE722B54E4A0029C22B /* AddTableViewCell.xib in Resources */,
 				AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */,
-				AE9CD09022B5AD4D00F6F058 /* App-icon@2x.png in Resources */,
+				09BAEAF522B5BDD30029C22B /* ImageCollectionViewCell.xib in Resources */,
 				AE1EDE5022B4C9F30035384E /* Assets.xcassets in Resources */,
-				AE9CD08F22B5AD4D00F6F058 /* App-icon.png in Resources */,
 				098FC49B22B4D5BE00846BED /* PersonTableViewCell.xib in Resources */,
-				AE9CD09122B5AD4D00F6F058 /* App-icon@3x.png in Resources */,
 				AE1EDE4E22B4C9F10035384E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,12 +355,6 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -388,12 +366,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -468,12 +440,12 @@
 			files = (
 				AE1EDE8122B5576E0035384E /* Memory.swift in Sources */,
 				FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */,
+				09BAEAF422B5BDD30029C22B /* ImageCollectionViewCell.swift in Sources */,
 				098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */,
 				AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */,
-				26B6518522B577E00087DC04 /* AddViewController.swift in Sources */,
+				09BAEAE622B54E4A0029C22B /* AddTableViewCell.swift in Sources */,
 				098FC49D22B4D8A400846BED /* RegistrationViewController.swift in Sources */,
 				09BAEAE922B55A950029C22B /* CustomButton.swift in Sources */,
-				26B6518922B5891E0087DC04 /* AddTableViewCell.swift in Sources */,
 				09BAEAEB22B55E3F0029C22B /* PersonCollectionViewController.swift in Sources */,
 				AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */,
 				AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */,
