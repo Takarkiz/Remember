@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import MaterialComponents
 
 class PersonTableViewCell: UITableViewCell {
     
     @IBOutlet var imagea:UIImageView!
     @IBOutlet var name:UILabel!
     @IBOutlet var date:UILabel!
+    @IBOutlet var background: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        background.elevate(elevation: 6.0)
     }
     
     func setCell(image:UIImage, name:String, date:String) {
@@ -31,4 +34,18 @@ class PersonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+}
+
+extension UIView: MaterialView {
+    func elevate(elevation: Double) {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: elevation)
+        self.layer.shadowRadius = CGFloat(elevation)
+        self.layer.shadowOpacity = 0.24
+    }
+}
+protocol MaterialView {
+    func elevate(elevation: Double)
 }

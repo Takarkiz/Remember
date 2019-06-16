@@ -28,11 +28,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.register(UINib(nibName: "AddTableViewCell", bundle: nil), forCellReuseIdentifier: "kojin")
         self.tableView.register(UINib(nibName: "PersonTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonTableViewCell")
 
+        // 背景
+        let bg = UIImage(named: "bg_image")
+        let bgImageView = UIImageView(frame: CGRect(x: 0,y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        bgImageView.image = bg
+        self.tableView.backgroundView = bgImageView
+        
         fireRegistration.getPerson(id: "1E6ABD01-B50A-491A-B8C0-85689D484A27"){ (result) in
             switch result{
             case .success(let value):
                 self.name = value.name
-                var format = DateFormatter()
+                let format = DateFormatter()
                 format.dateFormat = "yyyy年MM月dd日"
                 self.date = format.string(from: value.date)
                 self.image = value.image
@@ -105,7 +111,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        if indexPath.row == 0{
+            return 173
+        }else{
+            return 94
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -114,6 +125,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 30 // セルの下部のスペース
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.clear // 透明にすることでスペースとする
     }

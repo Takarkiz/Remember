@@ -7,12 +7,33 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialButtons_Theming
 
 class AddTableViewCell: UITableViewCell {
+    
+    @IBOutlet var addPersonButton: MDCButton!
+    @IBOutlet var shareMemoryButton: MDCButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        addPersonButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
+        shareMemoryButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
+        
+        addPersonButton.applyTextTheme(withScheme: globalScheme(color: UIColor(hex: "6A6A6A")))
+        shareMemoryButton.applyTextTheme(withScheme: globalScheme(color: UIColor(hex: "6A6A6A")))
+        
+        addPersonButton.backgroundColor = UIColor(hex: "FFFFFF")
+        shareMemoryButton.backgroundColor = UIColor(hex: "FFFFFF")
+    }
+    
+    private func globalScheme(color: UIColor) -> MDCContainerScheme {
+        let containerScheme = MDCContainerScheme()
+        containerScheme.shapeScheme = MDCShapeScheme()
+        containerScheme.colorScheme.primaryColor = color
+        // Customize containerScheme here...
+        return containerScheme
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
