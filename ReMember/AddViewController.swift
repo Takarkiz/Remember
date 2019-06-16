@@ -58,7 +58,10 @@ class AddViewController: UIViewController {
         guard let img = memoryImage else { return }
         if contentTextView.text != "" {
             let text = contentTextView.text
-            
+            let storePost = FirestorePost(roomId: userId)
+            storePost.postMemory(content: text, image: img) {
+                print("success upload photo")
+            }
         }
     }
     
