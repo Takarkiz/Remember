@@ -10,7 +10,7 @@ import UIKit
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_Theming
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNmaeLabel: UILabel!
@@ -18,6 +18,7 @@ class AddViewController: UIViewController {
     @IBOutlet var contentTextView: UITextView!
     @IBOutlet var photoUplocadButton: MDCButton!
     @IBOutlet var comformButton: MDCButton!
+    @IBOutlet var memoryImageView: UIImageView!
     
     let userId = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
     let registration = FirestoreResistration()
@@ -48,7 +49,7 @@ class AddViewController: UIViewController {
             // 「.camera」にすればカメラを起動できる
             pickerView.sourceType = .photoLibrary
             // デリゲート
-            pickerView.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            pickerView.delegate = self
             // ビューに表示
             self.present(pickerView, animated: true)
         }
@@ -57,10 +58,11 @@ class AddViewController: UIViewController {
     @IBAction func willPostMemoery() {
         guard let img = memoryImage else { return }
         if contentTextView.text != "" {
-            let text = contentTextView.text
+            guard let text = contentTextView.text else { return  }
             let storePost = FirestorePost(roomId: userId)
             storePost.postMemory(content: text, image: img) {
                 print("success upload photo")
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -79,6 +81,10 @@ class AddViewController: UIViewController {
         
         photoUplocadButton.applyContainedTheme(withScheme: globalScheme(color: UIColor(hex: "6A6A6A")))
         comformButton.applyContainedTheme(withScheme: globalScheme(color: UIColor(hex: "B2B2B2")))
+    }
+    
+    @IBAction func back(){
+        dismiss(animated: true, completion: nil)
     }
     
     private func setUserProf() {
@@ -108,6 +114,8 @@ extension AddViewController: UIImagePickerControllerDelegate {
         let image = info[.originalImage] as! UIImage
         // ビューに表示する
         memoryImage = image
+        photoUplocadButton.isHidden = true
+        memoryImageView.image = memoryImage
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
     }

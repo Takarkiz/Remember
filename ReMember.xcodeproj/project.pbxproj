@@ -30,6 +30,8 @@
 		AE1EDE7B22B4D5200035384E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7A22B4D5200035384E /* Person.swift */; };
 		AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7E22B541580035384E /* FirestorePost.swift */; };
 		AE1EDE8122B5576E0035384E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE8022B5576E0035384E /* Memory.swift */; };
+		AE75377122B5DC1200869594 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377022B5DC1200869594 /* AddViewController.swift */; };
+		AE75377322B5F85000869594 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377222B5F85000869594 /* WebViewController.swift */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		AE1EDE7A22B4D5200035384E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AE1EDE7E22B541580035384E /* FirestorePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorePost.swift; sourceTree = "<group>"; };
 		AE1EDE8022B5576E0035384E /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		AE75377022B5DC1200869594 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		AE75377222B5F85000869594 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
 				AE1EDE4C22B4C9F10035384E /* Main.storyboard */,
 				FFC2031022B59A0D00874F4A /* HexColor.swift */,
+				AE75377222B5F85000869594 /* WebViewController.swift */,
 				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
 				09BAEAF222B5BDD30029C22B /* ImageCollectionViewCell.swift */,
 				09BAEAF322B5BDD30029C22B /* ImageCollectionViewCell.xib */,
@@ -181,6 +186,7 @@
 				09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */,
 				09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */,
 				AE1EDE4F22B4C9F30035384E /* Assets.xcassets */,
+				AE75377022B5DC1200869594 /* AddViewController.swift */,
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
 				AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */,
@@ -440,6 +446,7 @@
 			files = (
 				AE1EDE8122B5576E0035384E /* Memory.swift in Sources */,
 				FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */,
+				AE75377122B5DC1200869594 /* AddViewController.swift in Sources */,
 				09BAEAF422B5BDD30029C22B /* ImageCollectionViewCell.swift in Sources */,
 				098FC49A22B4D5BE00846BED /* PersonTableViewCell.swift in Sources */,
 				AE1EDE4B22B4C9F10035384E /* ViewController.swift in Sources */,
@@ -450,6 +457,7 @@
 				AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */,
 				AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */,
 				AE1EDE7B22B4D5200035384E /* Person.swift in Sources */,
+				AE75377322B5F85000869594 /* WebViewController.swift in Sources */,
 				AE1EDE7922B4D34E0035384E /* FirestoreRegistration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

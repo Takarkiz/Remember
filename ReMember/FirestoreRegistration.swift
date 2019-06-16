@@ -88,6 +88,8 @@ class FirestoreResistration {
                 // Data for "images/island.jpg" is returned
                 if let image: UIImage = UIImage(data: data!){
                     completion(Result.success(image))
+                } else {
+                    return
                 }
             }
         }

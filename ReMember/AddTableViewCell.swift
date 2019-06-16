@@ -24,7 +24,7 @@ class AddTableViewCell: UITableViewCell {
         addPersonButton.setImage(UIImage(named: "input_button"), for: .normal)
         shareMemoryButton.setImage(UIImage(named: "share_button"), for: .normal)
     }
-    
+        
     private func globalScheme(color: UIColor) -> MDCContainerScheme {
         let containerScheme = MDCContainerScheme()
         containerScheme.shapeScheme = MDCShapeScheme()

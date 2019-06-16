@@ -12,7 +12,7 @@ import MaterialComponents.MaterialButtons_Theming
 
 class RegistrationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet var imageButton: UIButton!
+    @IBOutlet var imagePickButton: UIButton!
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
             // デフォルトの画像を表示する
@@ -66,8 +66,9 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         // 選択した写真を取得する
         if let pickedImage = info[.originalImage] as? UIImage {
-            imageButton.setImage(pickedImage, for: .normal)
             profImage = pickedImage
+            imageView.image = profImage
+            imagePickButton.isHidden = true
         }
         
         // 写真を選ぶビューを引っ込める

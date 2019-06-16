@@ -45,29 +45,32 @@ class FirestorePost {
     /// 思い出の読み込み
     func readMemory(completion: @escaping ([Memory]) -> Void) {
         personRef.addSnapshotListener { querySnapshot, error in
-            guard let snapshot = querySnapshot else {
-                print("Error fetching documents: \(error!)")
+            guard let documents = querySnapshot?.documents else {
                 return
             }
-            
+            let dispatchGroup = DispatchGroup()
             var memoryList: [Memory] = []
-            
-            snapshot.documentChanges.forEach { diff in
-                if diff.type == .added {
-                    let content = diff.document.data()["content"] as! String
-                    let imageUrl = diff.document.data()["image"] as! String
-                    self.photoDownload.getPhoto(imageUrl: imageUrl) { (result) in
-                        switch result {
-                        case .success(let value):
-                            let memory = Memory(content: content, image: value)
+            documents.forEach { doc in
+                let contentText = doc["content"] as! String
+                let imageUrl = doc["image"] as! String
+                self.photoDownload.getPhoto(imageUrl: imageUrl) { result in
+                    switch result {
+                    case .success(let value):
+                        dispatchGroup.enter()
+                        DispatchQueue.global().async {
+                            let memory = Memory(content: contentText, image: value)
                             memoryList.append(memory)
-                        case .failure(let err):
-                            print("Error fetching document: \(err)")
+                            dispatchGroup.leave()
                         }
+                    case .failure(let err):
+                        print("Error fetching document: \(err)")
                     }
                 }
             }
-            completion(memoryList)
+            dispatchGroup.notify(queue: .global()) {
+                completion(memoryList)
+            }
+            
             
         }
     }

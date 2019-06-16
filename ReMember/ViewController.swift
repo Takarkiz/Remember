@@ -50,7 +50,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // TableViewのセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     // TableViewのセルの内容
@@ -69,6 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "kojin", for: indexPath) as! AddTableViewCell
+            cell.addPersonButton.addTarget(self, action: #selector(toRegistration), for: .touchUpInside)
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
@@ -78,6 +78,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
             
         }
+
+    }
+    
+    @objc private func toRegistration() {
+        //まずは、同じstororyboard内であることをここで定義します
+        let storyboard: UIStoryboard = self.storyboard!
+        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
+        let second = storyboard.instantiateViewController(withIdentifier: "registration")
+        //ここが実際に移動するコードとなります
+        self.present(second, animated: true, completion: nil)
 
     }
     
