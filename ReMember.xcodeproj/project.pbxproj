@@ -171,29 +171,17 @@
 		AE1EDE4722B4C9F10035384E /* ReMember */ = {
 			isa = PBXGroup;
 			children = (
-				098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */,
-				098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */,
 				AE1EDE4822B4C9F10035384E /* AppDelegate.swift */,
-				AE1EDE4A22B4C9F10035384E /* ViewController.swift */,
-				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
 				AE1EDE4C22B4C9F10035384E /* Main.storyboard */,
-				FFC2031022B59A0D00874F4A /* HexColor.swift */,
-				AE75377222B5F85000869594 /* WebViewController.swift */,
-				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
-				09BAEAF222B5BDD30029C22B /* ImageCollectionViewCell.swift */,
-				09BAEAF322B5BDD30029C22B /* ImageCollectionViewCell.xib */,
-				09BAEAE822B55A950029C22B /* CustomButton.swift */,
-				09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */,
-				09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */,
 				AE1EDE4F22B4C9F30035384E /* Assets.xcassets */,
-				AE75377022B5DC1200869594 /* AddViewController.swift */,
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
 				AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */,
-				AE1EDE7822B4D34E0035384E /* FirestoreRegistration.swift */,
-				AE1EDE7E22B541580035384E /* FirestorePost.swift */,
-				AE1EDE7A22B4D5200035384E /* Person.swift */,
-				AE1EDE8022B5576E0035384E /* Memory.swift */,
+				AE75377622B73BBF00869594 /* ViewController */,
+				AE75377722B73C0800869594 /* Cells */,
+				AE75377422B73B8200869594 /* Firebase */,
+				AE75377522B73BA100869594 /* Model */,
+				AE75377B22B73C7800869594 /* Util */,
 			);
 			path = ReMember;
 			sourceTree = "<group>";
@@ -214,6 +202,82 @@
 				AE1EDE6A22B4C9F30035384E /* Info.plist */,
 			);
 			path = ReMemberUITests;
+			sourceTree = "<group>";
+		};
+		AE75377422B73B8200869594 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				AE1EDE7822B4D34E0035384E /* FirestoreRegistration.swift */,
+				AE1EDE7E22B541580035384E /* FirestorePost.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		AE75377522B73BA100869594 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE1EDE7A22B4D5200035384E /* Person.swift */,
+				AE1EDE8022B5576E0035384E /* Memory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE75377622B73BBF00869594 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE1EDE4A22B4C9F10035384E /* ViewController.swift */,
+				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
+				AE75377222B5F85000869594 /* WebViewController.swift */,
+				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
+				AE75377022B5DC1200869594 /* AddViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AE75377722B73C0800869594 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AE75377822B73C1D00869594 /* PersonsTableViewCell */,
+				AE75377922B73C2E00869594 /* ImageCollectionCell */,
+				AE75377A22B73C4500869594 /* OptionCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AE75377822B73C1D00869594 /* PersonsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				098FC49822B4D5BE00846BED /* PersonTableViewCell.swift */,
+				098FC49922B4D5BE00846BED /* PersonTableViewCell.xib */,
+			);
+			path = PersonsTableViewCell;
+			sourceTree = "<group>";
+		};
+		AE75377922B73C2E00869594 /* ImageCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				09BAEAF222B5BDD30029C22B /* ImageCollectionViewCell.swift */,
+				09BAEAF322B5BDD30029C22B /* ImageCollectionViewCell.xib */,
+			);
+			path = ImageCollectionCell;
+			sourceTree = "<group>";
+		};
+		AE75377A22B73C4500869594 /* OptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				09BAEAE422B54E4A0029C22B /* AddTableViewCell.swift */,
+				09BAEAE522B54E4A0029C22B /* AddTableViewCell.xib */,
+			);
+			path = OptionCell;
+			sourceTree = "<group>";
+		};
+		AE75377B22B73C7800869594 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FFC2031022B59A0D00874F4A /* HexColor.swift */,
+				09BAEAE822B55A950029C22B /* CustomButton.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,7 +717,10 @@
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -672,7 +739,10 @@
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -690,7 +760,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -708,7 +782,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -725,7 +803,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -742,7 +824,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
