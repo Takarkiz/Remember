@@ -32,6 +32,8 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     private var datePicker: UIDatePicker = UIDatePicker()
     private var inputDate: Date!
     
+    private let userDefaults = UserDefaults.standard
+    private var idList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,11 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         setDatePicker()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        idList = loadPersonsId()
+    }
     
     @IBAction func choosePicture(){
         // カメラロールが利用可能か？
@@ -58,7 +65,6 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
             // ビューに表示
             self.present(pickerView, animated: true)
         }
-        
         
     }
     
@@ -79,11 +85,11 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     @IBAction func store(){
         guard let name = nameField.text else {return}
         guard let date = inputDate else { return }
-        guard let img = profImage else {
-            return
-        }
+        guard let img = profImage else { return }
         
-        fsRegstration.resisterNewPerson(name: name, date: date, image: img) {
+        fsRegstration.resisterNewPerson(name: name, date: date, image: img) { (id) in
+            self.idList.append(id)
+            self.userDefaults.setValue(self.idList, forKey: "personId")
             self.toPersonView()
         }
     }
@@ -141,8 +147,15 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         inputDate = datePicker.date
         dateFiled.text = "\(formatter.string(from: datePicker.date))"
         
-        
-        
+    }
+    
+    /// 故人のidリストの取得
+    private func loadPersonsId () -> [String] {
+        if let personIds = userDefaults.array(forKey: "personId") {
+            return personIds as! [String]
+        } else {
+            return []
+        }
     }
     
     

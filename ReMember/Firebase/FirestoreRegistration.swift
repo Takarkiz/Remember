@@ -20,7 +20,7 @@ class FirestoreResistration {
     }
     
     // Firestoreに故人の基本情報を登録
-    func resisterNewPerson(name: String, date: Date, image: UIImage?, completion: @escaping () -> Void) {
+    func resisterNewPerson(name: String, date: Date, image: UIImage?, completion: @escaping (String) -> Void) {
         let personId: String = UUID().uuidString
         profPhotoUpload(id: personId, image: image) {(imageUrl) in
             self.db.collection("Person").document(personId).setData([
@@ -32,7 +32,7 @@ class FirestoreResistration {
                     print("Error writing document: \(err)")
                 } else {
                     print("Document successfully written!")
-                    completion()
+                    completion(personId)
                 }
             }
         }

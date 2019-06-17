@@ -14,52 +14,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var save = UserDefaults.standard
     let fireRegistration = FirestoreResistration()
+    private let userDefaults = UserDefaults.standard
+    private var persons: [Person] = []
+    private let formatter: DateFormatter = DateFormatter()
     
-    var name: String = ""
-    var date: String = ""
-    var image: UIImage!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-    
+        
         self.tableView.register(UINib(nibName: "AddTableViewCell", bundle: nil), forCellReuseIdentifier: "kojin")
         self.tableView.register(UINib(nibName: "PersonTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonTableViewCell")
-
+        
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         // 背景
         let bg = UIImage(named: "bg_image")
         let bgImageView = UIImageView(frame: CGRect(x: 0,y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
         bgImageView.image = bg
         self.tableView.backgroundView = bgImageView
-        
-        fireRegistration.getPerson(id: "1E6ABD01-B50A-491A-B8C0-85689D484A27"){ (result) in
-            switch result{
-            case .success(let value):
-                self.name = value.name
-                let format = DateFormatter()
-                format.dateFormat = "yyyy年MM月dd日"
-                self.date = format.string(from: value.date)
-                self.image = value.image
-                self.tableView.reloadData()
-                break
-                
-            case .failure( _):
-                break
-            }
-            
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        startReadingData()
     }
     
     // TableViewのセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return persons.count + 1
     }
     
     // TableViewのセルの内容
@@ -72,13 +56,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
-            cell.imagea.image = image
-            cell.name.text = name
-            cell.date.text = date
+            cell.imagea.image = persons[indexPath.row].image
+            cell.name.text = persons[indexPath.row].name
+            cell.date.text = formatter.string(from: persons[indexPath.row].date)
             return cell
             
         }
-
+        
     }
     
     @objc private func toRegistration() {
@@ -88,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let second = storyboard.instantiateViewController(withIdentifier: "registration")
         //ここが実際に移動するコードとなります
         self.present(second, animated: true, completion: nil)
-
+        
     }
     
     // TableViewが選択された時
@@ -110,14 +94,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //ここが実際に移動するコードとなります
             self.present(second, animated: true, completion: nil)
         }
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "person"{
             let personVC = segue.destination as! PersonCollectionViewController
             personVC.id = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
-            personVC.name = name
         }
     }
     
@@ -147,6 +130,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.clear// 透明にすることでスペースとする
     }
-
+    
+    // 端末に保存されたperson_idの取り出し
+    private func personsId() -> [String]? {
+        if let personIds = userDefaults.array(forKey: "personId") {
+            return personIds as? [String]
+        } else {
+            return nil
+        }
+    }
+    
+    // firestoreからデータの取得
+    private func startReadingData() {
+        guard let idList = personsId() else { return }
+        
+        for id in idList {
+            fireRegistration.getPerson(id: id){ (result) in
+                switch result{
+                case .success(let value):
+                    self.persons.append(value)
+                    self.tableView.reloadData()
+                    
+                case .failure(let error):
+                    print("errorLog: \(error)")
+                }
+                
+            }
+        }
+    }
+    
 }
 
