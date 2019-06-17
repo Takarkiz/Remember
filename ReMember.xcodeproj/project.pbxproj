@@ -32,6 +32,7 @@
 		AE1EDE8122B5576E0035384E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE8022B5576E0035384E /* Memory.swift */; };
 		AE75377122B5DC1200869594 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377022B5DC1200869594 /* AddViewController.swift */; };
 		AE75377322B5F85000869594 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377222B5F85000869594 /* WebViewController.swift */; };
+		AE75377D22B7ABA300869594 /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377C22B7ABA300869594 /* ResizeImage.swift */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		AE1EDE8022B5576E0035384E /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		AE75377022B5DC1200869594 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		AE75377222B5F85000869594 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		AE75377C22B7ABA300869594 /* ResizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImage.swift; sourceTree = "<group>"; };
 		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				FFC2031022B59A0D00874F4A /* HexColor.swift */,
 				09BAEAE822B55A950029C22B /* CustomButton.swift */,
+				AE75377C22B7ABA300869594 /* ResizeImage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1EDE8122B5576E0035384E /* Memory.swift in Sources */,
+				AE75377D22B7ABA300869594 /* ResizeImage.swift in Sources */,
 				FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */,
 				AE75377122B5DC1200869594 /* AddViewController.swift in Sources */,
 				09BAEAF422B5BDD30029C22B /* ImageCollectionViewCell.swift in Sources */,

@@ -80,7 +80,7 @@ class FirestorePost {
     private func uploadMemoryPhoto(image: UIImage?, counter: Int, completion: @escaping (String) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://remember-4ec53.appspot.com")
-        guard let img = image else { return }
+        guard let img = image?.reSizeImage(reSize: CGSize(width: 100, height: 100)) else { return }
         if let data: Data = UIImage.pngData(img)() {
             let imageUrl = "image/" + id + "/memory" + String(counter) + ".jpg"
             let reference = storageRef.child(imageUrl)

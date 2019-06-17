@@ -56,9 +56,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
-            cell.imagea.image = persons[indexPath.row].image
-            cell.name.text = persons[indexPath.row].name
-            cell.date.text = formatter.string(from: persons[indexPath.row].date)
+            cell.imagea.image = persons[indexPath.row-1].image
+            cell.name.text = persons[indexPath.row-1].name
+            cell.date.text = formatter.string(from: persons[indexPath.row-1].date)
             return cell
             
         }

@@ -63,7 +63,7 @@ class FirestoreResistration {
     private func profPhotoUpload(id: String, image: UIImage?, completion: @escaping (String) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://remember-4ec53.appspot.com")
-        guard let img = image else { return }
+        guard let img = image?.reSizeImage(reSize: CGSize(width: 100, height: 100)) else { return }
         if let data: Data = UIImage.pngData(img)() {
             let imageUrl = "image/" + id + "/profImage" + ".jpg"
             let reference = storageRef.child(imageUrl)
