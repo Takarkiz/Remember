@@ -10,19 +10,48 @@ import UIKit
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_Theming
 
-class AddTableViewCell: UITableViewCell {
+class HeaderView: UIView {
     
     @IBOutlet var addPersonButton: MDCButton!
     @IBOutlet var shareMemoryButton: MDCButton!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        loadNib()
+        
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        loadNib()
+    }
+    
+    func loadNib(){
+        let view = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! UIView
+        view.frame = self.bounds
+        self.addSubview(view)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         addPersonButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
         shareMemoryButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
         
         addPersonButton.setImage(UIImage(named: "input_button"), for: .normal)
         shareMemoryButton.setImage(UIImage(named: "share_button"), for: .normal)
+    }
+    
+    override func draw(_ rect: CGRect) {
+        let selfheight:CGFloat = 143
+        let selfwidth:CGFloat = 301
+        
+        self.frame.size.height = selfheight
+        self.frame.size.width = selfwidth
+        
+        
+        let superScreen:CGRect = (self.window?.screen.bounds)!
+        
     }
         
     private func globalScheme(color: UIColor) -> MDCContainerScheme {
@@ -32,12 +61,5 @@ class AddTableViewCell: UITableViewCell {
         // Customize containerScheme here...
         return containerScheme
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     
 }

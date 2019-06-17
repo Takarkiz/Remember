@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var save = UserDefaults.standard
     let fireRegistration = FirestoreResistration()
+    var headerView: HeaderView!
+    
     private let userDefaults = UserDefaults.standard
     private var persons: [Person] = []
     private let formatter: DateFormatter = DateFormatter()
@@ -39,31 +39,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(true)
         
         startReadingData()
+        
+        headerView = HeaderView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 173))
     }
     
-    // TableViewのセルの数
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count + 1
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
-    // TableViewのセルの内容
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "kojin", for: indexPath) as! AddTableViewCell
-            cell.addPersonButton.addTarget(self, action: #selector(toRegistration), for: .touchUpInside)
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
-            cell.imagea.image = persons[indexPath.row-1].image
-            cell.name.text = persons[indexPath.row-1].name
-            cell.date.text = formatter.string(from: persons[indexPath.row-1].date)
-            return cell
-            
-        }
-        
-    }
     
     @objc private func toRegistration() {
         //まずは、同じstororyboard内であることをここで定義します
@@ -75,60 +58,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    // TableViewが選択された時
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.row == 0 {
-            //まずは、同じstororyboard内であることをここで定義します
-            let storyboard: UIStoryboard = self.storyboard!
-            //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-            let second = storyboard.instantiateViewController(withIdentifier: "registration")
-            //ここが実際に移動するコードとなります
-            self.present(second, animated: true, completion: nil)
-        }else{
-            //まずは、同じstororyboard内であることをここで定義します
-            let storyboard: UIStoryboard = self.storyboard!
-            //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-            let second = storyboard.instantiateViewController(withIdentifier: "person")
-            
-            //ここが実際に移動するコードとなります
-            self.present(second, animated: true, completion: nil)
-        }
-        
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "person"{
             let personVC = segue.destination as! PersonCollectionViewController
             personVC.id = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0{
-            return 173
-        }else{
-            return 94
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30 // セルの上部のスペース
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 30 // セルの下部のスペース
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = .clear
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor.clear // 透明にすることでスペースとする
-    }
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor.clear// 透明にすることでスペースとする
     }
     
     // 端末に保存されたperson_idの取り出し
@@ -159,5 +93,74 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // 下に引っ張ったときは、ヘッダー位置を計算して動かないようにする（★ここがポイント..）
+        if scrollView.contentOffset.y < -100 {
+            headerView.frame = CGRect(x: 0, y: scrollView.contentOffset.y, width: self.view.frame.width, height: 173)
+        }
+    }
+    
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // TableViewのセルの数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return persons.count
+    }
+    
+    // TableViewのセルの内容
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
+        cell.imagea.image = persons[indexPath.row].image
+        cell.name.text = persons[indexPath.row].name
+        cell.date.text = formatter.string(from: persons[indexPath.row].date)
+        return cell
+        
+    }
+    
+    // TableViewが選択された時
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        
+        //まずは、同じstororyboard内であることをここで定義します
+        let storyboard: UIStoryboard = self.storyboard!
+        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
+        let second = storyboard.instantiateViewController(withIdentifier: "person")
+        
+        //ここが実際に移動するコードとなります
+        self.present(second, animated: true, completion: nil)
+        
+    }
+    
+    // セルの大きさ
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 94
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 173
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clear // 透明にすることでスペースとする
+    }
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clear// 透明にすることでスペースとする
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        return headerView
+    }
+    
+}
