@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Lottie
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_Theming
 
 class RegistrationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet var loadingAnimationView: AnimationView!
     @IBOutlet var imagePickButton: UIButton!
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
@@ -49,6 +51,7 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         super.viewWillAppear(true)
         
         idList = loadPersonsId()
+        
     }
     
     @IBAction func choosePicture(){
@@ -86,10 +89,14 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         guard let name = nameField.text else {return}
         guard let date = inputDate else { return }
         guard let img = profImage else { return }
+        loadingAnimationView.animation = Animation.named("animation-w400-h300")
+        loadingAnimationView.loopMode = .loop
+        loadingAnimationView.play()
         
         fsRegstration.resisterNewPerson(name: name, date: date, image: img) { (id) in
             self.idList.append(id)
             self.userDefaults.setValue(self.idList, forKey: "personId")
+            self.loadingAnimationView.stop()
             self.toPersonView()
         }
     }

@@ -33,6 +33,7 @@
 		AE75377322B5F85000869594 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377222B5F85000869594 /* WebViewController.swift */; };
 		AE75377D22B7ABA300869594 /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377C22B7ABA300869594 /* ResizeImage.swift */; };
 		AE75377F22B7B4EC00869594 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE75377E22B7B4EC00869594 /* HeaderView.xib */; };
+		AE75378122B7DDCE00869594 /* animation-w400-h300.json in Resources */ = {isa = PBXBuildFile; fileRef = AE75378022B7DDCE00869594 /* animation-w400-h300.json */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		AE75377222B5F85000869594 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE75377C22B7ABA300869594 /* ResizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImage.swift; sourceTree = "<group>"; };
 		AE75377E22B7B4EC00869594 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		AE75378022B7DDCE00869594 /* animation-w400-h300.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w400-h300.json"; sourceTree = "<group>"; };
 		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
 				AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */,
+				AE75378022B7DDCE00869594 /* animation-w400-h300.json */,
 				AE75377622B73BBF00869594 /* ViewController */,
 				AE75377722B73C0800869594 /* Cells */,
 				AE75377422B73B8200869594 /* Firebase */,
@@ -391,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE75378122B7DDCE00869594 /* animation-w400-h300.json in Resources */,
 				AE1EDE5322B4C9F30035384E /* LaunchScreen.storyboard in Resources */,
 				AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */,
 				AE75377F22B7B4EC00869594 /* HeaderView.xib in Resources */,
@@ -439,6 +443,7 @@
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -457,6 +462,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

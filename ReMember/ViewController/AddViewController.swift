@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_Theming
 
@@ -19,6 +20,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var photoUplocadButton: MDCButton!
     @IBOutlet var comformButton: MDCButton!
     @IBOutlet var memoryImageView: UIImageView!
+    @IBOutlet var loadingAnimationView: AnimationView!
     
     let userId = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
     let registration = FirestoreResistration()
@@ -91,6 +93,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         print(formatter.string(from: Date()))
+        startLoadingAnimation()
         
         registration.getPerson(id: userId) { (result) in
             switch result{
@@ -98,12 +101,19 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
                 self.userImageView.image = value.image
                 self.userNmaeLabel.text = value.name
                 self.userDeathDateLabel.text = formatter.string(from: value.date)
+                self.loadingAnimationView.stop()
                 
             case .failure(let error):
                 print("can not fetch user prof \(error)")
             }
             
         }
+    }
+    
+    private func startLoadingAnimation() {
+        loadingAnimationView.animation = Animation.named("animation-w400-h300")
+        loadingAnimationView.loopMode = .loop
+        loadingAnimationView.play()
     }
 }
 
