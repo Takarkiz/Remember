@@ -95,6 +95,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.2.2)
   - leveldb-library (1.20)
+  - lottie-ios (3.1.0)
   - MaterialComponents (84.6.0):
     - MaterialComponents/ActionSheet (= 84.6.0)
     - "MaterialComponents/ActionSheet+Theming (= 84.6.0)"
@@ -689,6 +690,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
+  - lottie-ios
   - MaterialComponents
 
 SPEC REPOS:
@@ -708,6 +710,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - lottie-ios
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -733,6 +736,7 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  lottie-ios: 9467723922dfff46f6d4e3019c32594a62440b7c
   MaterialComponents: 71139af6ca6875fbde8ab8e64a275b7fd6a22d7f
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -742,6 +746,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
 
-PODFILE CHECKSUM: 7f2a86e007fab2078c94f350a516f3715c696e74
+PODFILE CHECKSUM: 2d1d225697d4828db9bb271766a7f4ea223d8268
 
 COCOAPODS: 1.5.0
