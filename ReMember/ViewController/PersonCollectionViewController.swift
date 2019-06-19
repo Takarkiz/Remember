@@ -7,91 +7,119 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialBottomAppBar
+import MaterialComponents.MaterialBottomAppBar_ColorThemer
+import MaterialComponents.MaterialButtons_ButtonThemer
 
-class PersonCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
-    
-    var id:String!
+class PersonCollectionViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var nameLabel:UILabel!
     
+    @IBOutlet var bottomBarView: MDCBottomAppBarView!
+    private let colorScheme = MDCSemanticColorScheme()
+    private let typgoraphyScheme = MDCTypographyScheme()
+    private let buttonScheme = MDCButtonScheme()
+    
+    var id: String!
     var name: String = ""
-    var date: String = ""
-    var memory: [Memory] = []
-
+    private var memory: [Memory] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
         
-        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
-        
-        nameLabel.text = "きな粉"
-        
-        UITabBar.appearance().tintColor =
-            UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
-        
-         UITabBar.appearance().barTintColor =
-            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        
+        initializeCollectionView()
+        setupAppBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-//        let firePost = FirestorePost(roomId: "1E6ABD01-B50A-491A-B8C0-85689D484A27")
-//        firePost.readMemory { (memoryArray) in
-//            self.memory.append(contentsOf: memoryArray)
-//            let dispatchGroup = DispatchGroup()
-//            for m in memoryArray{
-//                dispatchGroup.enter()
-//                DispatchQueue.global().async {
-//                    self.memory.append(m)
-//                    dispatchGroup.leave()
-//                }
-//            }
-//            dispatchGroup.notify(queue: .global()) {
-//                self.collectionView.reloadData()
-//            }
-//
-//        }
+        print("ID\(id)")
+        readData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddNewMemory" {
+            let personVC = segue.destination as! AddViewController
+            personVC.userId = self.id
+        }
+
     }
     
     @IBAction func createMovie() {
-        performSegue(withIdentifier: "toWebView", sender: nil)
+        
     }
     
+    
+    @objc private func addImageButton(){
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "toAddNewMemory", sender: nil)
+        }
+    }
+    
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func readData() {
+        guard let id = id else { return }
+        let firePost = FirestorePost(roomId: id)
+        firePost.readMemory { (memoryArray) in
+            self.memory = memoryArray
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            //            self.memory.append(contentsOf: memoryArray)
+            //            let dispatchGroup = DispatchGroup()
+            //            for m in memoryArray{
+            //                dispatchGroup.enter()
+            //                DispatchQueue.global().async {
+            //                    self.memory.append(m)
+            //                    dispatchGroup.leave()
+            //                }
+            //            }
+            //            dispatchGroup.notify(queue: .main) {
+            
+            //            }
+            
+        }
+    }
+    
+    private func initializeCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.itemSize = CGSize(width: 94, height: 94)
+        collectionViewLayout.minimumInteritemSpacing = 10
+        collectionView.collectionViewLayout = collectionViewLayout
+    }
+    
+    private func setupAppBar() {
+        colorScheme.primaryColor = UIColor(hex: "F9796E")
+        buttonScheme.colorScheme = colorScheme
+        buttonScheme.typographyScheme = typgoraphyScheme
+        MDCFloatingActionButtonThemer.applyScheme(buttonScheme, to: bottomBarView.floatingButton)
+        MDCBottomAppBarColorThemer.applySurfaceVariant(withSemanticColorScheme: colorScheme,
+                                                       to: bottomBarView)
+        bottomBarView.floatingButton.setImage(UIImage(named: "add_icon"), for: .normal)
+        bottomBarView.floatingButton.addTarget(nil, action: #selector(addImageButton), for: .touchUpInside)
+    }
+    
+    
+}
+
+extension PersonCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(memory.count)
-        //return memory.count
-        return 15
+        print("\(id)における配列の個数\(memory.count)")
+        return memory.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath)
-        //cell.imagea.image = memory[indexPath.item].image
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+        cell.memoryImageView.image = memory[indexPath.item - 1].image
+        
         return cell
     }
-    
-    @IBAction func addImageButton(){
-        //まずは、同じstororyboard内であることをここで定義します
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-        let second = storyboard.instantiateViewController(withIdentifier: "add")
-        //ここが実際に移動するコードとなります
-        self.present(second, animated: true, completion: nil)
-    }
-    
-    @IBAction func back(){
-        //まずは、同じstororyboard内であることをここで定義します
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-        let second = storyboard.instantiateViewController(withIdentifier: "first")
-        //ここが実際に移動するコードとなります
-        self.present(second, animated: true, completion: nil)
-    }
-
 }

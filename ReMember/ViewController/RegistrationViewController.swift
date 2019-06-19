@@ -54,6 +54,13 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFinishRegistration" {
+            let memoryCollectionView = segue.destination as! PersonCollectionViewController
+            memoryCollectionView.id = idList.last!
+        }
+    }
+    
     @IBAction func choosePicture(){
         // カメラロールが利用可能か？
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -102,12 +109,9 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     private func toPersonView() {
-        //まずは、同じstororyboard内であることをここで定義します
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-        let second = storyboard.instantiateViewController(withIdentifier: "person")
-        //ここが実際に移動するコードとなります
-        self.present(second, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "toFinishRegistration", sender: nil)
+        }
     }
     
     private func setButton(elevationValue: Int, color: UIColor) {

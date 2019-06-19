@@ -22,16 +22,14 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var memoryImageView: UIImageView!
     @IBOutlet var loadingAnimationView: AnimationView!
     
-    let userId = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
+    var userId: String!
     let registration = FirestoreResistration()
-    //let firePost =
     
     private var memoryImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setUserProf()
         setupButton()
         contentTextView.delegate = self
     }
@@ -41,6 +39,15 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
             self.contentTextView.resignFirstResponder()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setUserProf()
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        segue
+//    }
     
     @IBAction func willPhotoPick() {
         // カメラロールが利用可能か？
@@ -59,12 +66,15 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func willPostMemoery() {
         guard let img = memoryImage else { return }
+        startLoadingAnimation()
         if contentTextView.text != "" {
             guard let text = contentTextView.text else { return  }
             let storePost = FirestorePost(roomId: userId)
             storePost.postMemory(content: text, image: img) {
-                print("success upload photo")
-                self.dismiss(animated: true, completion: nil)
+                self.loadingAnimationView.stop()
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
@@ -90,10 +100,11 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     private func setUserProf() {
+        guard let userId = userId else { return }
+        
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         print(formatter.string(from: Date()))
-        startLoadingAnimation()
         
         registration.getPerson(id: userId) { (result) in
             switch result{
@@ -101,7 +112,6 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
                 self.userImageView.image = value.image
                 self.userNmaeLabel.text = value.name
                 self.userDeathDateLabel.text = formatter.string(from: value.date)
-                self.loadingAnimationView.stop()
                 
             case .failure(let error):
                 print("can not fetch user prof \(error)")

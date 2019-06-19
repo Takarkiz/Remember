@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     private let userDefaults = UserDefaults.standard
     private var persons: [Person] = []
+    private var personIdList: [String]? = []
+    
+    private var selectedCell: Int = 0
     private let formatter: DateFormatter = DateFormatter()
     
     override func viewDidLoad() {
@@ -46,19 +49,17 @@ class ViewController: UIViewController {
     
     
     @objc private func toRegistration() {
-        //まずは、同じstororyboard内であることをここで定義します
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-        let second = storyboard.instantiateViewController(withIdentifier: "registration")
-        //ここが実際に移動するコードとなります
-        self.present(second, animated: true, completion: nil)
-        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "toAddPersonView", sender: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "person"{
+        if segue.identifier == "toPersonList" {
             let personVC = segue.destination as! PersonCollectionViewController
-            personVC.id = "1E6ABD01-B50A-491A-B8C0-85689D484A27"
+            personVC.id = personIdList![selectedCell]
+            personVC.name = persons[selectedCell].name
+            print("userID: \(personIdList![selectedCell])")
         }
     }
     
@@ -73,7 +74,11 @@ class ViewController: UIViewController {
     
     // firestoreからデータの取得
     private func startReadingData() {
-        guard let idList = personsId() else { return }
+        personIdList = personsId()
+        guard let idList = personIdList else {
+            print("データなし")
+            return
+        }
         
         for id in idList {
             fireRegistration.getPerson(id: id){ (result) in
@@ -112,17 +117,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // TableViewが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        
-        //まずは、同じstororyboard内であることをここで定義します
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(今回の場合は先ほどsecondと名付けたのでそれを書きます)
-        let second = storyboard.instantiateViewController(withIdentifier: "person")
-        
-        //ここが実際に移動するコードとなります
-        self.present(second, animated: true, completion: nil)
-        
+        selectedCell = indexPath.row
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "toPersonList", sender: nil)
+        }
     }
     
     // セルの大きさ

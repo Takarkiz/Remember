@@ -265,9 +265,9 @@
 			children = (
 				AE1EDE4A22B4C9F10035384E /* ViewController.swift */,
 				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
-				AE75377222B5F85000869594 /* WebViewController.swift */,
 				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
 				AE75377022B5DC1200869594 /* AddViewController.swift */,
+				AE75377222B5F85000869594 /* WebViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
