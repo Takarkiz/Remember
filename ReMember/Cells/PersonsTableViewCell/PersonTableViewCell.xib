@@ -19,32 +19,56 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="93.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-DV-KnV">
-                        <rect key="frame" x="36" y="8" width="302" height="76"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-DV-KnV">
+                        <rect key="frame" x="36.5" y="9" width="302" height="75.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="大河内 明日香" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiv-6K-P62">
-                                <rect key="frame" x="90" y="14" width="190" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大河内 明日香" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiv-6K-P62">
+                                <rect key="frame" x="91.5" y="14" width="212" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="CaU-go-4Rl"/>
+                                    <constraint firstAttribute="width" constant="212" id="o1D-8H-87c"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="26"/>
                                 <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-bE-uJy">
-                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-bE-uJy">
+                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="75.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75.5" id="AmC-hr-po5"/>
+                                    <constraint firstAttribute="width" constant="75.5" id="ti3-tu-Plk"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2016年3月9日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc0-PP-Ji9">
-                                <rect key="frame" x="90" y="48" width="130" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年12月31日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc0-PP-Ji9">
+                                <rect key="frame" x="91.5" y="48" width="99.5" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="W1b-D7-CND"/>
+                                    <constraint firstAttribute="width" constant="99.5" id="pVg-8T-mEI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                                 <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kc0-PP-Ji9" firstAttribute="leading" secondItem="yiv-6K-P62" secondAttribute="leading" id="7et-Jj-csX"/>
+                            <constraint firstItem="yiv-6K-P62" firstAttribute="leading" secondItem="WF2-bE-uJy" secondAttribute="trailing" constant="16" id="9CV-XY-TDw"/>
+                            <constraint firstAttribute="bottom" secondItem="WF2-bE-uJy" secondAttribute="bottom" id="MLp-oL-Udl"/>
+                            <constraint firstAttribute="width" constant="302" id="MiG-mG-RZ3"/>
+                            <constraint firstItem="Kc0-PP-Ji9" firstAttribute="top" secondItem="yiv-6K-P62" secondAttribute="bottom" constant="8" id="YaJ-3r-3be"/>
+                            <constraint firstItem="WF2-bE-uJy" firstAttribute="leading" secondItem="v3K-DV-KnV" secondAttribute="leading" id="hHe-oR-2Oo"/>
+                            <constraint firstItem="yiv-6K-P62" firstAttribute="top" secondItem="v3K-DV-KnV" secondAttribute="top" constant="14" id="oB8-Mx-sEb"/>
+                            <constraint firstAttribute="height" constant="75.5" id="s88-8j-3KB"/>
+                            <constraint firstItem="WF2-bE-uJy" firstAttribute="top" secondItem="v3K-DV-KnV" secondAttribute="top" id="vs8-a5-zaj"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="v3K-DV-KnV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Dpj-hw-c2q"/>
+                    <constraint firstAttribute="bottom" secondItem="v3K-DV-KnV" secondAttribute="bottom" constant="9" id="UMF-Bm-5hO"/>
+                    <constraint firstItem="v3K-DV-KnV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="g3d-Nr-XPM"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

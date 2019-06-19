@@ -213,7 +213,7 @@
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
 				AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */,
-				AE75378022B7DDCE00869594 /* animation-w400-h300.json */,
+				AE7537A522B9E65500869594 /* AnimationFile */,
 				AE75378422B9E41000869594 /* AppIcon.appiconset */,
 				AE75377622B73BBF00869594 /* ViewController */,
 				AE75377722B73C0800869594 /* Cells */,
@@ -277,7 +277,7 @@
 			children = (
 				AE75377822B73C1D00869594 /* PersonsTableViewCell */,
 				AE75377922B73C2E00869594 /* ImageCollectionCell */,
-				AE75377A22B73C4500869594 /* OptionCell */,
+				AE75377A22B73C4500869594 /* HeaderView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -300,13 +300,13 @@
 			path = ImageCollectionCell;
 			sourceTree = "<group>";
 		};
-		AE75377A22B73C4500869594 /* OptionCell */ = {
+		AE75377A22B73C4500869594 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
 				09BAEAE422B54E4A0029C22B /* HeaderView.swift */,
 				AE75377E22B7B4EC00869594 /* HeaderView.xib */,
 			);
-			path = OptionCell;
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		AE75377B22B73C7800869594 /* Util */ = {
@@ -340,6 +340,14 @@
 				AE75379422B9E41000869594 /* App-icon@3x-40.png */,
 			);
 			path = AppIcon.appiconset;
+			sourceTree = "<group>";
+		};
+		AE7537A522B9E65500869594 /* AnimationFile */ = {
+			isa = PBXGroup;
+			children = (
+				AE75378022B7DDCE00869594 /* animation-w400-h300.json */,
+			);
+			path = AnimationFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
