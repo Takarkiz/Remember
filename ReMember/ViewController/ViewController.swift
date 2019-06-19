@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let fireRegistration = FirestoreResistration()
-    var headerView: HeaderView!
     
     private let userDefaults = UserDefaults.standard
     private var persons: [Person] = []
@@ -39,8 +38,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(true)
         
         startReadingData()
-        
-        headerView = HeaderView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 173))
     }
     
     override func viewDidLayoutSubviews() {
@@ -90,14 +87,6 @@ class ViewController: UIViewController {
                 }
                 
             }
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        // 下に引っ張ったときは、ヘッダー位置を計算して動かないようにする（★ここがポイント..）
-        if scrollView.contentOffset.y < -100 {
-            headerView.frame = CGRect(x: 0, y: scrollView.contentOffset.y, width: self.view.frame.width, height: 173)
         }
     }
     
@@ -159,7 +148,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
+        let headerView = HeaderView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 173))
+        headerView.addPersonButton.addTarget(nil, action: #selector(toRegistration), for: .touchUpInside)
         return headerView
     }
     

@@ -12,47 +12,35 @@ import MaterialComponents.MaterialButtons_Theming
 
 class HeaderView: UIView {
     
-    @IBOutlet var addPersonButton: MDCButton!
-    @IBOutlet var shareMemoryButton: MDCButton!
+    var addPersonButton: MDCButton!
+    var shareMemoryButton: MDCButton!
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        loadNib()
-        
+        setButton()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        loadNib()
     }
     
-    func loadNib(){
-        let view = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! UIView
-        view.frame = self.bounds
-        self.addSubview(view)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    private func setButton() {
+        addPersonButton = MDCButton(frame: CGRect(x: bounds.width / 2 - 7.5 - 143, y: 40, width: 143, height: 143))
+        shareMemoryButton = MDCButton(frame: CGRect(x: bounds.width / 2 + 7.5, y: 40, width: 143, height: 143))
+        let inputImage = UIImage(named: "input_button")
+        let shareImage = UIImage(named: "share_button")
+        addPersonButton.backgroundColor = .white
+        shareMemoryButton.backgroundColor = .white
+        addPersonButton.enableRippleBehavior = true
+        shareMemoryButton.enableRippleBehavior = true
+        addPersonButton.setImage(inputImage, for: .normal)
+        shareMemoryButton.setImage(shareImage, for: .normal)
         addPersonButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
         shareMemoryButton.setElevation(ShadowElevation(rawValue: 6.0), for: .normal)
-        
-        addPersonButton.setImage(UIImage(named: "input_button"), for: .normal)
-        shareMemoryButton.setImage(UIImage(named: "share_button"), for: .normal)
+        self.addSubview(addPersonButton)
+        self.addSubview(shareMemoryButton)
     }
     
-    override func draw(_ rect: CGRect) {
-        let selfheight:CGFloat = 143
-        let selfwidth:CGFloat = 301
-        
-        self.frame.size.height = selfheight
-        self.frame.size.width = selfwidth
-        
-        
-        let superScreen:CGRect = (self.window?.screen.bounds)!
-        
-    }
         
     private func globalScheme(color: UIColor) -> MDCContainerScheme {
         let containerScheme = MDCContainerScheme()
