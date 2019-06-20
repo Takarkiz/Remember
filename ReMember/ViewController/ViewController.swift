@@ -44,6 +44,10 @@ class ViewController: UIViewController {
         startReadingData()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @objc private func toRegistration() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toAddPersonView", sender: nil)
