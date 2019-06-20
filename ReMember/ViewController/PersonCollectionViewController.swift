@@ -33,7 +33,6 @@ class PersonCollectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("ID\(id)")
         readData()
     }
     
@@ -42,7 +41,7 @@ class PersonCollectionViewController: UIViewController {
             let personVC = segue.destination as! AddViewController
             personVC.userId = self.id
         }
-
+        
     }
     
     @IBAction func createMovie() {
@@ -68,19 +67,6 @@ class PersonCollectionViewController: UIViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            //            self.memory.append(contentsOf: memoryArray)
-            //            let dispatchGroup = DispatchGroup()
-            //            for m in memoryArray{
-            //                dispatchGroup.enter()
-            //                DispatchQueue.global().async {
-            //                    self.memory.append(m)
-            //                    dispatchGroup.leave()
-            //                }
-            //            }
-            //            dispatchGroup.notify(queue: .main) {
-            
-            //            }
-            
         }
     }
     
@@ -111,14 +97,14 @@ class PersonCollectionViewController: UIViewController {
 
 extension PersonCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("\(id)における配列の個数\(memory.count)")
+        
         return memory.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        cell.memoryImageView.image = memory[indexPath.item - 1].image
+        cell.memoryImageView.image = memory[indexPath.item].image
         
         return cell
     }

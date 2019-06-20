@@ -49,29 +49,31 @@ class FirestorePost {
                 return
             }
             let dispatchGroup = DispatchGroup()
+            let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
             var memoryList: [Memory] = []
             documents.forEach { doc in
-                let contentText = doc["content"] as! String
-                let imageUrl = doc["image"] as! String
-                self.photoDownload.getPhoto(imageUrl: imageUrl) { result in
-                    switch result {
-                    case .success(let value):
-                        dispatchGroup.enter()
-                        DispatchQueue.global().async {
+                dispatchGroup.enter()
+                dispatchQueue.async {
+                    let contentText = doc["content"] as! String
+                    let imageUrl = doc["image"] as! String
+                    self.photoDownload.getPhoto(imageUrl: imageUrl) { result in
+                        switch result {
+                        case .success(let value):
+                            
                             let memory = Memory(content: contentText, image: value)
                             memoryList.append(memory)
                             dispatchGroup.leave()
+                            
+                        case .failure(let err):
+                            print("Error fetching document: \(err)")
+                            dispatchGroup.leave()
                         }
-                    case .failure(let err):
-                        print("Error fetching document: \(err)")
                     }
                 }
             }
-            dispatchGroup.notify(queue: .global()) {
+            dispatchGroup.notify(queue: .main) {
                 completion(memoryList)
             }
-            
-            
         }
     }
     

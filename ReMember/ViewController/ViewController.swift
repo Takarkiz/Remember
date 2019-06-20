@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let fireRegistration = FirestoreResistration()
+    var headerView: HeaderView!
     
     private let userDefaults = UserDefaults.standard
     private var persons: [Person] = []
@@ -146,7 +147,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = HeaderView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 173))
+        headerView = HeaderView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 173))
         headerView.addPersonButton.addTarget(nil, action: #selector(toRegistration), for: .touchUpInside)
         return headerView
     }

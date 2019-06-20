@@ -30,7 +30,6 @@
 		AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE7E22B541580035384E /* FirestorePost.swift */; };
 		AE1EDE8122B5576E0035384E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EDE8022B5576E0035384E /* Memory.swift */; };
 		AE75377122B5DC1200869594 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377022B5DC1200869594 /* AddViewController.swift */; };
-		AE75377322B5F85000869594 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377222B5F85000869594 /* WebViewController.swift */; };
 		AE75377D22B7ABA300869594 /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE75377C22B7ABA300869594 /* ResizeImage.swift */; };
 		AE75377F22B7B4EC00869594 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE75377E22B7B4EC00869594 /* HeaderView.xib */; };
 		AE75378122B7DDCE00869594 /* animation-w400-h300.json in Resources */ = {isa = PBXBuildFile; fileRef = AE75378022B7DDCE00869594 /* animation-w400-h300.json */; };
@@ -103,7 +102,6 @@
 		AE1EDE7E22B541580035384E /* FirestorePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorePost.swift; sourceTree = "<group>"; };
 		AE1EDE8022B5576E0035384E /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		AE75377022B5DC1200869594 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		AE75377222B5F85000869594 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE75377C22B7ABA300869594 /* ResizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImage.swift; sourceTree = "<group>"; };
 		AE75377E22B7B4EC00869594 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		AE75378022B7DDCE00869594 /* animation-w400-h300.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w400-h300.json"; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 				098FC49C22B4D8A400846BED /* RegistrationViewController.swift */,
 				09BAEAEA22B55E3F0029C22B /* PersonCollectionViewController.swift */,
 				AE75377022B5DC1200869594 /* AddViewController.swift */,
-				AE75377222B5F85000869594 /* WebViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -625,7 +622,6 @@
 				AE1EDE4922B4C9F10035384E /* AppDelegate.swift in Sources */,
 				AE1EDE7F22B541590035384E /* FirestorePost.swift in Sources */,
 				AE1EDE7B22B4D5200035384E /* Person.swift in Sources */,
-				AE75377322B5F85000869594 /* WebViewController.swift in Sources */,
 				AE1EDE7922B4D34E0035384E /* FirestoreRegistration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
