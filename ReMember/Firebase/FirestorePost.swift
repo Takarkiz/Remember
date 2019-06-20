@@ -28,6 +28,7 @@ class FirestorePost {
         getMemoryCount { (count) in
             self.uploadMemoryPhoto(image: image, counter: count) { (fileName, url) in
                 self.personRef.document(fileName).setData([
+                    "id": fileName, 
                     "content": content,
                     "image": url]) { error in
                         if let err = error {

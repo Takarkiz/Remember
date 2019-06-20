@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import MaterialComponents.MaterialBottomAppBar
 import MaterialComponents.MaterialBottomAppBar_ColorThemer
 import MaterialComponents.MaterialButtons_ButtonThemer
@@ -22,7 +23,8 @@ class PersonCollectionViewController: UIViewController {
     
     var id: String!
     var name: String = ""
-    private var memory: [Memory] = []
+    private var memoryList: [Memory] = []
+    private var selectedMemoryId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,22 @@ class PersonCollectionViewController: UIViewController {
     }
     
     @IBAction func createMovie() {
+        if memoryList.count < 5 {
+            print("少なスギィ")
+            return
+        }
         
+        guard let personId = id else { return }
+        
+        // APIリクエストを叩いて，dataとして受け取る
+        AF.request("https://spajan.herokuapp.com/api/v1/img/" + String(personId)).responseData { (responseObject) in
+            switch responseObject.result {
+            case .success(let val):
+                print(String(data: val, encoding: .utf8))
+            case .failure(let err):
+                print("失敗\(err)")
+            }
+        }
     }
     
     
@@ -63,7 +80,7 @@ class PersonCollectionViewController: UIViewController {
         guard let id = id else { return }
         let firePost = FirestorePost(roomId: id)
         firePost.readMemory { (memoryArray) in
-            self.memory = memoryArray
+            self.memoryList = memoryArray
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -98,14 +115,19 @@ class PersonCollectionViewController: UIViewController {
 extension PersonCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return memory.count
+        return memoryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        cell.memoryImageView.image = memory[indexPath.item].image
+        cell.memoryImageView.image = memoryList[indexPath.item].image
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //selectedMemoryContent = memoryList[indexPath.item].content
+        
     }
 }

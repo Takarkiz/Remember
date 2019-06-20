@@ -45,10 +45,6 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
         setUserProf()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        segue
-//    }
-    
     @IBAction func willPhotoPick() {
         // カメラロールが利用可能か？
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
