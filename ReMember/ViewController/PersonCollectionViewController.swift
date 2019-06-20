@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 import MaterialComponents.MaterialBottomAppBar
 import MaterialComponents.MaterialBottomAppBar_ColorThemer
 import MaterialComponents.MaterialButtons_ButtonThemer
@@ -25,6 +26,7 @@ class PersonCollectionViewController: UIViewController {
     var name: String = ""
     private var memoryList: [Memory] = []
     private var selectedMemoryId: String!
+    private let shareMessage = MDCSnackbarMessage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,7 @@ class PersonCollectionViewController: UIViewController {
         AF.request("https://spajan.herokuapp.com/api/v1/img/" + String(personId)).responseData { (responseObject) in
             switch responseObject.result {
             case .success(let val):
-                print(String(data: val, encoding: .utf8))
+                print(String(data: val, encoding: .utf8)!)
             case .failure(let err):
                 print("失敗\(err)")
             }
@@ -110,17 +112,30 @@ class PersonCollectionViewController: UIViewController {
         
         // 共有ボタン
         let shareButton = UIBarButtonItem(image: UIImage(named: "share_item_button"), style: .done, target: self, action: #selector(startShare))
-        let movieButton = UIBarButtonItem(image: UIImage(named: "movie_item_button"), style: .done, target: self, action: #selector(watchMovie))
-        bottomBarView.trailingBarButtonItems = [shareButton, movieButton]
+        //let movieButton = UIBarButtonItem(image: UIImage(named: "movie_item_button"), style: .done, target: self, action: #selector(watchMovie))
+        bottomBarView.trailingBarButtonItems = [shareButton]
     }
     
     @objc private func startShare() {
-        
+        guard let personId = id else { return }
+        let shareLinkAlert = SCLAlertView()
+        shareLinkAlert.showCustom("思い出を共有しよう",
+                                  subTitle: "共有用URL",
+                                  color: UIColor(hex: "F9796E"),
+                                  icon: UIImage(named: "share_icon_white")!)
+        shareLinkAlert.addTextView().text = personId
+        shareLinkAlert.addButton("クリップボードに保存") {
+            let board = UIPasteboard.general
+            board.setValue(personId, forPasteboardType: "public.text")
+            self.shareMessage.text = "クリップボードに保存されました"
+            MDCSnackbarManager.show(self.shareMessage)
+            
+        }
     }
     
-    @objc private func watchMovie() {
-        
-    }
+//    @objc private func watchMovie() {
+//
+//    }
     
     
 }

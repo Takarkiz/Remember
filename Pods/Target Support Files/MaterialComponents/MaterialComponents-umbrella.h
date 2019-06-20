@@ -264,6 +264,7 @@
 #import "MaterialTabs.h"
 #import "MDCTabBar.h"
 #import "MDCTabBarAlignment.h"
+#import "MDCTabBarDisplayDelegate.h"
 #import "MDCTabBarExtendedAlignment.h"
 #import "MDCTabBarIndicatorAttributes.h"
 #import "MDCTabBarIndicatorContext.h"

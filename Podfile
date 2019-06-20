@@ -10,6 +10,8 @@ pod 'Firebase/Storage'
 pod 'MaterialComponents'
 pod 'Alamofire', '~> 5.0.0-beta.5'
 pod 'lottie-ios'
+pod 'SCLAlertView'
+pod 'IQKeyboardManagerSwift'
 
   # Pods for ReMember
 

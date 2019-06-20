@@ -42,20 +42,21 @@ class FirestoreResistration {
     // IDから故人の情報を取得する
     func getPerson(id: String, completion: @escaping (Result<Person, Error>) -> Void){
         let docRef = db.collection("Person").document(id)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                guard let docDic = document.data() else { return }
-                self.dicToPerson(dic: docDic){ (result) in
-                    switch result{
-                    case .success(let value):
-                        completion(Result.success(value))
-                    case .failure(let error):
-                        completion(Result.failure(error))
-                    }
-                }
-            } else {
+        docRef.addSnapshotListener { (docSnapshot, error) in
+            guard let document = docSnapshot?.data() else {
                 print("Document does not exist")
+                return
             }
+            
+            self.dicToPerson(dic: document){ (result) in
+                switch result{
+                case .success(let value):
+                    completion(Result.success(value))
+                case .failure(let error):
+                    completion(Result.failure(error))
+                }
+            }
+            
         }
     }
     

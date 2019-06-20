@@ -49,6 +49,7 @@
 		AE7537A222B9E41000869594 /* App-icon@3x-20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75379222B9E41000869594 /* App-icon@3x-20.png */; };
 		AE7537A322B9E41000869594 /* App-icon@3x-20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75379322B9E41000869594 /* App-icon@3x-20@3x.png */; };
 		AE7537A422B9E41000869594 /* App-icon@3x-40.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75379422B9E41000869594 /* App-icon@3x-40.png */; };
+		AEFF818C22BBDCDE003061E0 /* 鉛筆の無料アイコン7.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFF818B22BBDCDE003061E0 /* 鉛筆の無料アイコン7.png */; };
 		BDE2B9504505908CFE4BE149 /* Pods_ReMemberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2BBF79412B971BAD708AB1 /* Pods_ReMemberTests.framework */; };
 		FFC2031122B59A0D00874F4A /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2031022B59A0D00874F4A /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		AE75379222B9E41000869594 /* App-icon@3x-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@3x-20.png"; sourceTree = "<group>"; };
 		AE75379322B9E41000869594 /* App-icon@3x-20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@3x-20@3x.png"; sourceTree = "<group>"; };
 		AE75379422B9E41000869594 /* App-icon@3x-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-icon@3x-40.png"; sourceTree = "<group>"; };
+		AEFF818B22BBDCDE003061E0 /* 鉛筆の無料アイコン7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鉛筆の無料アイコン7.png"; sourceTree = "<group>"; };
 		D4ACEAA8D67B69B67F361EA4 /* Pods-ReMemberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD95D491802823CBF78A1B /* Pods-ReMemberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMemberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMemberUITests/Pods-ReMemberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF3983A399B5CC49A7865D4 /* Pods-ReMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReMember/Pods-ReMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				AE1EDE5122B4C9F30035384E /* LaunchScreen.storyboard */,
 				AE1EDE5422B4C9F30035384E /* Info.plist */,
 				AE1EDE7622B4D2690035384E /* GoogleService-Info.plist */,
+				AEFF818B22BBDCDE003061E0 /* 鉛筆の無料アイコン7.png */,
 				AE7537A522B9E65500869594 /* AnimationFile */,
 				AE75378422B9E41000869594 /* AppIcon.appiconset */,
 				AE75377622B73BBF00869594 /* ViewController */,
@@ -467,6 +470,7 @@
 				AE75379E22B9E41000869594 /* App-icon@3x-29@2x.png in Resources */,
 				AE7537A322B9E41000869594 /* App-icon@3x-20@3x.png in Resources */,
 				AE1EDE7722B4D2690035384E /* GoogleService-Info.plist in Resources */,
+				AEFF818C22BBDCDE003061E0 /* 鉛筆の無料アイコン7.png in Resources */,
 				AE75377F22B7B4EC00869594 /* HeaderView.xib in Resources */,
 				AE75379722B9E41000869594 /* App-icon@3x-40@2x.png in Resources */,
 				AE7537A022B9E41000869594 /* App-icon@3x-20@2x.png in Resources */,
@@ -510,6 +514,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
@@ -517,6 +522,7 @@
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -529,6 +535,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
@@ -536,6 +543,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -803,10 +811,7 @@
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -825,10 +830,7 @@
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
 				INFOPLIST_FILE = ReMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -846,11 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -868,11 +866,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -889,11 +883,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -910,11 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZG94MSA64;
 				INFOPLIST_FILE = ReMemberUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = khaki.ReMemberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

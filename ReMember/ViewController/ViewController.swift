@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class ViewController: UIViewController {
     
@@ -52,6 +53,17 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toAddPersonView", sender: nil)
         }
+    }
+    
+    @objc private func inputSharingCode() {
+        let alertView = SCLAlertView()
+        let txt = alertView.addTextField("コードを入力してください")
+        alertView.showCustom("共有", subTitle: "友達が作成したMemberを追加することができます", color: UIColor(hex: "F9796E"), icon: UIImage(named: "鉛筆の無料アイコン7")!)
+        
+    }
+    
+    private func loadId(id: String?) {
+        print(id!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -147,7 +159,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         headerView = HeaderView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 173))
-        headerView.addPersonButton.addTarget(nil, action: #selector(toRegistration), for: .touchUpInside)
+        headerView.addPersonButton.addTarget(self, action: #selector(toRegistration), for: .touchUpInside)
+        headerView.shareMemoryButton.addTarget(self, action: #selector(inputSharingCode), for: .touchUpInside)
         return headerView
     }
     
