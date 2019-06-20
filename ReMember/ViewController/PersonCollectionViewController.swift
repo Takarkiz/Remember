@@ -107,6 +107,19 @@ class PersonCollectionViewController: UIViewController {
                                                        to: bottomBarView)
         bottomBarView.floatingButton.setImage(UIImage(named: "add_icon"), for: .normal)
         bottomBarView.floatingButton.addTarget(nil, action: #selector(addImageButton), for: .touchUpInside)
+        
+        // 共有ボタン
+        let shareButton = UIBarButtonItem(image: UIImage(named: "share_item_button"), style: .done, target: self, action: #selector(startShare))
+        let movieButton = UIBarButtonItem(image: UIImage(named: "movie_item_button"), style: .done, target: self, action: #selector(watchMovie))
+        bottomBarView.trailingBarButtonItems = [shareButton, movieButton]
+    }
+    
+    @objc private func startShare() {
+        
+    }
+    
+    @objc private func watchMovie() {
+        
     }
     
     
