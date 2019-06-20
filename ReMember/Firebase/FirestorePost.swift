@@ -26,17 +26,16 @@ class FirestorePost {
     /// 思い出の投稿
     func postMemory(content: String, image: UIImage?, completion: @escaping () -> Void) {
         getMemoryCount { (count) in
-            self.uploadMemoryPhoto(image: image, counter: count) { (url) in
-                self.personRef.addDocument(data: [
+            self.uploadMemoryPhoto(image: image, counter: count) { (fileName, url) in
+                self.personRef.document(fileName).setData([
                     "content": content,
-                    "image": url
-                ]) { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                        completion()
-                    }
+                    "image": url]) { error in
+                        if let err = error {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                            completion()
+                        }
                 }
             }
         }
@@ -79,16 +78,17 @@ class FirestorePost {
     
     // Private
     /// 思い出画像のアップロード
-    private func uploadMemoryPhoto(image: UIImage?, counter: Int, completion: @escaping (String) -> Void) {
+    private func uploadMemoryPhoto(image: UIImage?, counter: Int, completion: @escaping (String, String) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://remember-4ec53.appspot.com")
         guard let img = image?.reSizeImage(reSize: CGSize(width: 100, height: 100)) else { return }
         if let data: Data = UIImage.pngData(img)() {
-            let imageUrl = "image/" + id + "/memory" + String(counter) + ".jpg"
+            let fileName = "memory" + String(counter)
+            let imageUrl = "image/" + id + "/" + fileName + ".jpg"
             let reference = storageRef.child(imageUrl)
             reference.putData(data, metadata: nil, completion: { metaData, error in
                 // ユーザー画像のurlを渡す
-                completion(imageUrl)
+                completion(fileName, imageUrl)
             })
         }
     }

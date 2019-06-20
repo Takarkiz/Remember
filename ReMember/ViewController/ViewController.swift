@@ -44,11 +44,6 @@ class ViewController: UIViewController {
         startReadingData()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    
     @objc private func toRegistration() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toAddPersonView", sender: nil)

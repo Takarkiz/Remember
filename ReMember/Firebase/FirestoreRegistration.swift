@@ -24,6 +24,7 @@ class FirestoreResistration {
         let personId: String = UUID().uuidString
         profPhotoUpload(id: personId, image: image) {(imageUrl) in
             self.db.collection("Person").document(personId).setData([
+                "id": personId,
                 "name": name,
                 "date": date,
                 "image": imageUrl
@@ -96,6 +97,7 @@ class FirestoreResistration {
     }
     
     private func dicToPerson(dic: [String: Any], completion: @escaping (Result<Person, Error>) -> Void){
+        let id: String = dic["id"] as! String
         let userName: String = dic["name"] as! String
         let date: Date = (dic["date"] as! Timestamp).dateValue()
         let imageUrl: String = dic["image"] as! String
@@ -103,7 +105,7 @@ class FirestoreResistration {
         getPhoto(imageUrl: imageUrl) { (result) in
             switch result{
             case .success(let value):
-                let person = Person(name: userName, date: date, image: value)
+                let person = Person(id: id, name: userName, date: date, image: value)
                 completion(Result.success(person))
                 break
             case .failure(let error):
