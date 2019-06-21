@@ -8,16 +8,21 @@
 
 import UIKit
 import SCLAlertView
+import Lottie
+import MaterialComponents.MaterialSnackbar
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var loadingAnimationView = AnimationView()
     let fireRegistration = FirestoreResistration()
     var headerView: HeaderView!
+    private let message = MDCSnackbarMessage()
+    
     
     private let userDefaults = UserDefaults.standard
     private var persons: [Person] = []
-    private var personIdList: [String]? = []
+    private var personIdList: [String] = []
     
     private var selectedCell: Int = 0
     private let formatter: DateFormatter = DateFormatter()
@@ -75,15 +80,51 @@ class ViewController: UIViewController {
     }
     
     private func loadId(id: String?) {
-        print(id!)
+        guard let personId = id else { return }
+        
+        // 重複している場合はここで処理を終える
+        if willAddDoplicatePerson(inputId: personId) {
+            message.text = "すでに登録済みのMemberです"
+            MDCSnackbarManager.show(message)
+            return
+        }
+        
+        startLoading()
+        
+        fireRegistration.getPerson(id: personId) { (result) in
+            switch result {
+            case .success(let value):
+                self.loadingAnimationView.stop()
+                self.persons.append(value)
+                self.saveIdList(id: value.id)
+                
+                // テーブルビューの更新はメインスレッドで行う
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            case .failure(let err):
+                self.loadingAnimationView.stop()
+                self.message.text = "追加に失敗しました"
+                MDCSnackbarManager.show(self.message)
+                print(err)
+            }
+        }
+    }
+    
+    private func startLoading() {
+        loadingAnimationView = AnimationView(frame: CGRect(x: self.view.bounds.width/2-50 , y: self.view.bounds.height/2-50, width: 100, height: 100))
+        loadingAnimationView.animation = Animation.named("animation-w400-h300")
+        loadingAnimationView.loopMode = .loop
+        loadingAnimationView.play()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPersonList" {
             let personVC = segue.destination as! PersonCollectionViewController
-            personVC.id = personIdList![selectedCell]
+            personVC.id = personIdList[selectedCell]
             personVC.name = persons[selectedCell].name
-            print("userID: \(personIdList![selectedCell])")
+            print("userID: \(personIdList[selectedCell])")
         }
     }
     
@@ -96,13 +137,29 @@ class ViewController: UIViewController {
         }
     }
     
+    private func saveIdList(id: String?) {
+        guard let personId = id else { return }
+        personIdList.append(personId)
+        userDefaults.set(personIdList, forKey: "personId")
+    }
+    
+    private func willAddDoplicatePerson(inputId: String) -> Bool{
+        for id in personIdList {
+            if id == inputId {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     // firestoreからデータの取得
     private func startReadingData() {
-        personIdList = personsId()
-        guard let idList = personIdList else {
+        guard let idList = personsId() else {
             print("データなし")
             return
         }
+        personIdList = idList
         
         for id in idList {
             fireRegistration.getPerson(id: id){ (result) in

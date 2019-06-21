@@ -44,7 +44,7 @@ class FirestoreResistration {
         let docRef = db.collection("Person").document(id)
         docRef.addSnapshotListener { (docSnapshot, error) in
             guard let document = docSnapshot?.data() else {
-                print("Document does not exist")
+                completion(Result.failure(error ?? NSError(domain: "not exist document", code: 0, userInfo: nil)))
                 return
             }
             

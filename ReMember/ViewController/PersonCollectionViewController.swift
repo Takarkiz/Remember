@@ -21,12 +21,13 @@ class PersonCollectionViewController: UIViewController {
     private let colorScheme = MDCSemanticColorScheme()
     private let typgoraphyScheme = MDCTypographyScheme()
     private let buttonScheme = MDCButtonScheme()
+    private let shareMessage = MDCSnackbarMessage()
     
     var id: String!
     var name: String = ""
     private var memoryList: [Memory] = []
     private var selectedMemoryId: String!
-    private let shareMessage = MDCSnackbarMessage()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
