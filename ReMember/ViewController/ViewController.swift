@@ -56,9 +56,21 @@ class ViewController: UIViewController {
     }
     
     @objc private func inputSharingCode() {
-        let alertView = SCLAlertView()
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
         let txt = alertView.addTextField("コードを入力してください")
-        alertView.showCustom("共有", subTitle: "友達が作成したMemberを追加することができます", color: UIColor(hex: "F9796E"), icon: UIImage(named: "鉛筆の無料アイコン7")!)
+        alertView.addButton("決定") {
+            self.loadId(id: txt.text)
+        }
+        alertView.addButton("キャンセル", backgroundColor: UIColor(hex: "4480C7"), textColor: UIColor(hex: "FFFFFF"), showTimeout: nil) {
+            
+        }
+        alertView.showCustom("共有",
+                             subTitle: "友達が作成したMemberを追加することができます",
+                             color: UIColor(hex: "F9796E"),
+                             icon: UIImage(named: "鉛筆の無料アイコン7")!)
         
     }
     

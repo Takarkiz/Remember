@@ -118,19 +118,27 @@ class PersonCollectionViewController: UIViewController {
     
     @objc private func startShare() {
         guard let personId = id else { return }
-        let shareLinkAlert = SCLAlertView()
-        shareLinkAlert.showCustom("思い出を共有しよう",
-                                  subTitle: "共有用URL",
-                                  color: UIColor(hex: "F9796E"),
-                                  icon: UIImage(named: "share_icon_white")!)
-        shareLinkAlert.addTextView().text = personId
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        
+        let shareLinkAlert = SCLAlertView(appearance: appearance)
+        
+        let textView = shareLinkAlert.addTextView()
+        textView.text = personId
+        textView.isEditable = false
+        
         shareLinkAlert.addButton("クリップボードに保存") {
             let board = UIPasteboard.general
             board.setValue(personId, forPasteboardType: "public.text")
             self.shareMessage.text = "クリップボードに保存されました"
             MDCSnackbarManager.show(self.shareMessage)
-            
         }
+        shareLinkAlert.showCustom("思い出を共有しよう",
+                                  subTitle: "共有用URL",
+                                  color: UIColor(hex: "F9796E"),
+                                  icon: UIImage(named: "share_icon_white")!)
     }
     
 //    @objc private func watchMovie() {
