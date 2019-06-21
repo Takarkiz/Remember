@@ -126,10 +126,6 @@
                                 <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aB1-Ds-osT">
-                                <rect key="frame" x="36" y="470" width="302" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-5b-2TV" customClass="MDCButton">
                                 <rect key="frame" x="36.666666666666657" y="670" width="302" height="68"/>
                                 <constraints>
@@ -172,6 +168,13 @@
                                     <action selector="willPhotoPick" destination="SlV-KT-lCB" eventType="touchUpInside" id="Nef-HD-3OG"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aB1-Ds-osT">
+                                <rect key="frame" x="36.666666666666657" y="449" width="302" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Ggd-3w-xSp"/>
+                                    <constraint firstAttribute="width" constant="302" id="t0Z-9r-nYH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -183,12 +186,14 @@
                             <constraint firstItem="uy8-5b-2TV" firstAttribute="centerX" secondItem="adv-wU-yH9" secondAttribute="centerX" id="BI7-n5-RUx"/>
                             <constraint firstItem="cYv-36-mah" firstAttribute="centerX" secondItem="adv-wU-yH9" secondAttribute="centerX" id="DgU-BT-DSg"/>
                             <constraint firstItem="P2l-i0-Fff" firstAttribute="centerX" secondItem="adv-wU-yH9" secondAttribute="centerX" id="F1b-ed-Fqe"/>
+                            <constraint firstItem="aB1-Ds-osT" firstAttribute="top" secondItem="goP-Ku-Nbk" secondAttribute="bottom" constant="8" id="PEB-my-GN1"/>
                             <constraint firstItem="CUX-KT-kQ9" firstAttribute="trailing" secondItem="mH6-uq-rCA" secondAttribute="trailing" id="YcR-A8-9Qa"/>
                             <constraint firstItem="goP-Ku-Nbk" firstAttribute="top" secondItem="mmp-pR-0LQ" secondAttribute="bottom" constant="20" id="aXT-kX-Jl1"/>
                             <constraint firstItem="lA3-U9-Qr6" firstAttribute="top" secondItem="P2l-i0-Fff" secondAttribute="bottom" constant="20" id="cUQ-MJ-bhX"/>
                             <constraint firstItem="CUX-KT-kQ9" firstAttribute="leading" secondItem="mH6-uq-rCA" secondAttribute="leading" id="doI-Ig-Gg9"/>
                             <constraint firstItem="Hx2-vW-0LN" firstAttribute="centerX" secondItem="adv-wU-yH9" secondAttribute="centerX" id="eBM-0o-atw"/>
                             <constraint firstItem="cYv-36-mah" firstAttribute="leading" secondItem="goP-Ku-Nbk" secondAttribute="leading" id="fL6-Gr-4yI"/>
+                            <constraint firstItem="aB1-Ds-osT" firstAttribute="centerX" secondItem="adv-wU-yH9" secondAttribute="centerX" id="gm6-DR-4aA"/>
                             <constraint firstItem="CUX-KT-kQ9" firstAttribute="top" secondItem="mH6-uq-rCA" secondAttribute="top" id="hQh-Es-aZf"/>
                             <constraint firstItem="mmp-pR-0LQ" firstAttribute="centerX" secondItem="adv-wU-yH9" secondAttribute="centerX" id="kIe-Dr-upX"/>
                             <constraint firstItem="mH6-uq-rCA" firstAttribute="bottom" secondItem="uy8-5b-2TV" secondAttribute="bottom" constant="40" id="t99-Ef-q7o"/>
