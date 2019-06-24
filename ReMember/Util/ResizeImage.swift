@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     // resize image
-    func resize(size _size: CGSize) -> UIImage? {
+    func resize(size _size: CGSize) -> UIImage {
         let widthRatio = _size.width / size.width
         let heightRatio = _size.height / size.height
         let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
@@ -22,12 +22,12 @@ extension UIImage {
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return resizedImage
+        return resizedImage!
     }
     
     // scale the image at rates
     func scaleImage(scaleSize:CGFloat)->UIImage {
         let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
-        return reSizeImage(reSize: reSize)
+        return resize(size: reSize)
     }
 }

@@ -51,7 +51,8 @@ class PersonCollectionViewController: UIViewController {
     
     @IBAction func createMovie() {
         if memoryList.count < 5 {
-            print("少なスギィ")
+            shareMessage.text = "写真が少なすぎます"
+            MDCSnackbarManager.show(shareMessage)
             return
         }
         
