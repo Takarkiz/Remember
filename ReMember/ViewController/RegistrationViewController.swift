@@ -54,11 +54,9 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toFinishRegistration" {
-            let memoryCollectionView = segue.destination as! PersonCollectionViewController
-            memoryCollectionView.id = idList.last!
-        }
+    // バックボタンの処理
+    @IBAction func back(){
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func choosePicture(){
@@ -110,7 +108,7 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     
     private func toPersonView() {
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "toFinishRegistration", sender: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -167,12 +165,6 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         } else {
             return []
         }
-    }
-    
-    
-    
-    @IBAction func back(){
-        dismiss(animated: true, completion: nil)
     }
     
 }
