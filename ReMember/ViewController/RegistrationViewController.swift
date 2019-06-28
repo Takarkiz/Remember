@@ -54,6 +54,11 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
+    // バックボタンの処理
+    @IBAction func back(){
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func choosePicture(){
         // カメラロールが利用可能か？
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -160,12 +165,6 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         } else {
             return []
         }
-    }
-    
-    
-    
-    @IBAction func back(){
-        dismiss(animated: true, completion: nil)
     }
     
 }

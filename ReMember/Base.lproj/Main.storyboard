@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="故人一覧" id="y1Z-a8-szh"/>
                     <connections>
                         <outlet property="tableView" destination="GCL-XA-hXz" id="h4j-co-jqZ"/>
-                        <segue destination="BtT-6Q-2uG" kind="presentation" identifier="toAddPersonView" id="bdG-SJ-8dg"/>
+                        <segue destination="gsn-Zx-Nrz" kind="presentation" identifier="toAddPersonView" id="bdG-SJ-8dg"/>
                         <segue destination="Hfd-Il-cqb" kind="show" identifier="toPersonList" id="r5z-vV-dbp"/>
                     </connections>
                 </viewController>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLG-qa-P5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3604" y="131.52709359605913"/>
+            <point key="canvasLocation" x="4546.3999999999996" y="131.52709359605913"/>
         </scene>
         <!--故人の追加-->
         <scene sceneID="frP-pH-HUL">
@@ -205,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="山田 太郎" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-iO-8ts">
-                                <rect key="frame" x="36.666666666666657" y="362" width="302" height="58"/>
+                                <rect key="frame" x="36.666666666666657" y="406" width="302" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="302" id="hb6-Sb-Ayj"/>
                                     <constraint firstAttribute="height" constant="58" id="hgU-dS-4Zq"/>
@@ -215,7 +215,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="YYYY/MM/DD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pNi-m9-9qe">
-                                <rect key="frame" x="36.666666666666657" y="478" width="302" height="58"/>
+                                <rect key="frame" x="36.666666666666657" y="522" width="302" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="302" id="AxF-Yt-fWT"/>
                                     <constraint firstAttribute="height" constant="58" id="jRu-9a-3xh"/>
@@ -225,7 +225,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="故人の名前を教えてください。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8e-Nm-zfG">
-                                <rect key="frame" x="36.666666666666657" y="336" width="250.99999999999997" height="18"/>
+                                <rect key="frame" x="36.666666666666657" y="380" width="250.99999999999997" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="04X-IN-tWR"/>
                                     <constraint firstAttribute="height" constant="18" id="Xk4-nR-2fg"/>
@@ -235,7 +235,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BH-ib-Hcj">
-                                <rect key="frame" x="100.66666666666669" y="125" width="174" height="174"/>
+                                <rect key="frame" x="100.66666666666669" y="169" width="174" height="174"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="camera_button"/>
                                 <userDefinedRuntimeAttributes>
@@ -248,7 +248,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3c-7X-3za" customClass="MDCButton">
-                                <rect key="frame" x="36.666666666666657" y="596" width="302" height="68"/>
+                                <rect key="frame" x="36.666666666666657" y="640" width="302" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="302" id="2ZG-Na-1Am"/>
                                     <constraint firstAttribute="height" constant="68" id="gJL-1q-kFd"/>
@@ -260,7 +260,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="命日を教えてください。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4P-Tp-azx">
-                                <rect key="frame" x="36.666666666666657" y="452" width="197" height="18"/>
+                                <rect key="frame" x="36.666666666666657" y="496" width="197" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="2Eo-kO-ZCN"/>
                                     <constraint firstAttribute="height" constant="18" id="hkL-Bb-yrZ"/>
@@ -270,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s20-Wx-93b">
-                                <rect key="frame" x="100.66666666666669" y="125" width="174" height="174"/>
+                                <rect key="frame" x="100.66666666666669" y="169" width="174" height="174"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="174" id="CSh-Yf-h0X"/>
                                     <constraint firstAttribute="width" constant="174" id="wBe-sk-le9"/>
@@ -306,6 +306,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8o8-TX-Pae"/>
                     </view>
+                    <navigationItem key="navigationItem" title="故人を追加する" id="Pu9-Pz-hfh">
+                        <barButtonItem key="backBarButtonItem" title="取り消す" id="dAC-cl-axO"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="z98-Ev-zXg">
+                            <connections>
+                                <action selector="back" destination="BtT-6Q-2uG" id="O50-DI-Kc5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="comformButton" destination="s3c-7X-3za" id="ImD-dH-p8s"/>
                         <outlet property="dateFiled" destination="pNi-m9-9qe" id="jZq-kN-sgh"/>
@@ -317,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChR-Ik-Ctl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919.2" y="513.54679802955673"/>
+            <point key="canvasLocation" x="2861.5999999999999" y="513.54679802955673"/>
         </scene>
         <!--Person Collection View Controller-->
         <scene sceneID="vlO-y9-WHS">
@@ -390,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9d-52-xCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775.1999999999998" y="131.52709359605913"/>
+            <point key="canvasLocation" x="3717.5999999999999" y="131.52709359605913"/>
         </scene>
         <!--Pink Navigation Controller-->
         <scene sceneID="dfQ-7F-L3i">
@@ -409,6 +417,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZB-yD-4Gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="131.52709359605913"/>
+        </scene>
+        <!--Pink Navigation Controller-->
+        <scene sceneID="9Kp-Ep-SRY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gsn-Zx-Nrz" customClass="PinkNavigationController" customModule="ReMember" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ob-vX-7X6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BtT-6Q-2uG" kind="relationship" relationship="rootViewController" id="ePy-7H-cvv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oW9-MD-gvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919.2" y="513.54679802955673"/>
         </scene>
     </scenes>
     <resources>
