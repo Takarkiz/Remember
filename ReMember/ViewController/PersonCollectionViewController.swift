@@ -24,7 +24,7 @@ class PersonCollectionViewController: UIViewController {
     private let shareMessage = MDCSnackbarMessage()
     
     var id: String!
-    var name: String = ""
+    var name: String!
     private var memoryList: [Memory] = []
     private var selectedMemoryId: String!
     
@@ -39,6 +39,9 @@ class PersonCollectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         readData()
+        
+        guard let name = name else { return }
+        self.title = name
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -142,11 +145,6 @@ class PersonCollectionViewController: UIViewController {
                                   color: UIColor(hex: "F9796E"),
                                   icon: UIImage(named: "share_icon_white")!)
     }
-    
-//    @objc private func watchMovie() {
-//
-//    }
-    
     
 }
 
