@@ -11,7 +11,8 @@ import SCLAlertView
 import Lottie
 import MaterialComponents.MaterialSnackbar
 
-class ViewController: UIViewController {
+// メンバーリストのView
+final class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var loadingAnimationView = AnimationView()
@@ -79,6 +80,7 @@ class ViewController: UIViewController {
         
     }
     
+    // idを読み込んでメンバーを追加する
     private func loadId(id: String?) {
         guard let personId = id else { return }
         
@@ -112,6 +114,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // ローディングアニメーションを開始する
     private func startLoading() {
         loadingAnimationView = AnimationView(frame: CGRect(x: self.view.bounds.width/2-50 , y: self.view.bounds.height/2-50, width: 100, height: 100))
         loadingAnimationView.animation = Animation.named("animation-w400-h300")
@@ -128,6 +131,17 @@ class ViewController: UIViewController {
         }
     }
     
+    // 取得したデータが新しいものかどうかを比較する
+    private func checkDuplicateData(fetchedPerson: Person) {
+        for person in persons {
+            if fetchedPerson.id == person.id {
+                return
+            }
+        }
+        self.persons.append(fetchedPerson)
+        
+    }
+    
     // 端末に保存されたperson_idの取り出し
     private func personsId() -> [String]? {
         if let personIds = userDefaults.array(forKey: "personId") {
@@ -137,19 +151,20 @@ class ViewController: UIViewController {
         }
     }
     
+    // idを受け取りidリストに保存する
     private func saveIdList(id: String?) {
         guard let personId = id else { return }
         personIdList.append(personId)
         userDefaults.set(personIdList, forKey: "personId")
     }
     
+    // idを受け取り，すでに保持しているメンバーかどうかを比較する
     private func willAddDoplicatePerson(inputId: String) -> Bool{
         for id in personIdList {
             if id == inputId {
                 return true
             }
         }
-        
         return false
     }
     
@@ -165,7 +180,7 @@ class ViewController: UIViewController {
             fireRegistration.getPerson(id: id){ (result) in
                 switch result{
                 case .success(let value):
-                    self.persons.append(value)
+                    self.checkDuplicateData(fetchedPerson: value)
                     self.tableView.reloadData()
                     
                 case .failure(let error):
