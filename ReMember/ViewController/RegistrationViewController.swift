@@ -26,7 +26,7 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet var dateFiled: UITextField!
     @IBOutlet var comformButton: MDCButton!
     
-    
+    private let alertMessage = MDCSnackbarMessage()
     let fsRegstration = FirestoreResistration()
     
     private var profImage: UIImage?
@@ -79,9 +79,12 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     // 写真を選んだ後に呼ばれる処理
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         // 選択した写真を取得する
-        if let pickedImage = info[.originalImage] as? UIImage {
+        if let pickedImage = info[.editedImage] as? UIImage {
             profImage = pickedImage
             imageView.image = profImage
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = self.imageView.frame.height / 2.0
             imagePickButton.isHidden = true
         }
         
@@ -91,9 +94,22 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     
     // 登録ボタン押した時
     @IBAction func store(){
-        guard let name = nameField.text else {return}
-        guard let date = inputDate else { return }
-        guard let img = profImage else { return }
+        guard let name = nameField.text else {
+            alertMessage.text = "名前が入力されていません"
+            MDCSnackbarManager.show(alertMessage)
+            return
+        }
+        guard let date = inputDate else {
+            alertMessage.text = "命日が入力されていません"
+            MDCSnackbarManager.show(alertMessage)
+            return
+        }
+        guard let img = profImage else {
+            alertMessage.text = "写真を登録してください"
+            MDCSnackbarManager.show(alertMessage)
+            return
+        }
+        
         loadingAnimationView.animation = Animation.named("animation-w400-h300")
         loadingAnimationView.loopMode = .loop
         loadingAnimationView.play()
@@ -179,10 +195,6 @@ extension RegistrationViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         if nameField.text == "" {
-            return true
-        }
-        
-        if dateFiled.text == "" {
             return true
         }
         
