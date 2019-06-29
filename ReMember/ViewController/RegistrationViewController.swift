@@ -82,6 +82,9 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
         if let pickedImage = info[.editedImage] as? UIImage {
             profImage = pickedImage
             imageView.image = profImage
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = self.imageView.frame.height / 2.0
             imagePickButton.isHidden = true
         }
         
