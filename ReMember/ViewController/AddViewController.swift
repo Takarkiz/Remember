@@ -127,7 +127,7 @@ extension AddViewController: UIImagePickerControllerDelegate {
     // 写真を選んだ後に呼ばれる処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 選択した写真を取得する
-        let image = info[.originalImage] as! UIImage
+        let image = info[.editedImage] as! UIImage
         // ビューに表示する
         memoryImage = image
         photoUplocadButton.isHidden = true
