@@ -79,7 +79,7 @@ class RegistrationViewController: UIViewController, UIImagePickerControllerDeleg
     // 写真を選んだ後に呼ばれる処理
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         // 選択した写真を取得する
-        if let pickedImage = info[.originalImage] as? UIImage {
+        if let pickedImage = info[.editedImage] as? UIImage {
             profImage = pickedImage
             imageView.image = profImage
             imagePickButton.isHidden = true
